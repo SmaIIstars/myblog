@@ -1,0 +1,39 @@
+body {
+  background-image: url(https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img3.jpg);
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position:50% 50%;
+  background-origin: content-box;
+  background-size: cover;
+  opacity: 0.9;
+  +mobile(){
+    background-image: url(https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img3.jpg);
+    background-size: cover;
+  }
+
+  cursor: url(https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/cursor/cursor_9.cur), default;
+}
+
+a:hover{
+  cursor: url(https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/cursor/cursor_10.cur), default;
+}
+
+::-webkit-scrollbar{
+  width: 5px;
+  height: 1px;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  background: #535353;
+}
+
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background   : #000;
+}
+

@@ -1,0 +1,107 @@
+---
+title: Docsify
+tags: Docsify
+abbrlink: 2eeac462
+date: 2021-04-03 19:21:27
+---
+
+# Docsify
+
+**Docsify generates your documentation website on the fly. Unlike GitBook, it does not generate static html files. Instead, it smartly loads and parses your Markdown files and displays them as a website. To start using it, all you need to do is create an index.html and deploy it on GitHub Pages.**
+
+## Install
+
+```bash
+npm i docsify-cli -g
+```
+
+## Initialize
+
+```bash
+docsify init
+```
+
+- `index.html` as the entry file.
+- `Readme.md` as the home page.
+- `.nojekyll` prevents the GitHub Page from ignoring files that begin with an underscore.
+
+A basic configuration
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>神奇的docsify</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 设置浏览器图标 -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 默认主题 -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+</head>
+
+<body>
+    <!-- 定义加载时候的动作 -->
+    <div id="app">加载中...</div>
+    <script>
+        window.$docsify = {
+            // 项目名称
+            name: 'docsify-demo',
+            // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址
+            repo: 'https://github.com/zjcscut/docsify-demo',
+            // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
+            loadSidebar: true,
+            // 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
+            loadNavbar: true,
+            // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
+            coverpage: true,
+            // 最大支持渲染的标题层级
+            maxLevel: 4,
+            // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级，建议配置为1或者2
+            subMaxLevel: 2
+        }
+    </script>
+    <script>
+        // 搜索配置
+        window.$docsify = {
+            search: {
+                maxAge: 86400000,
+                paths: auto,
+                placeholder: '搜索',
+                noData: '找不到结果',
+                depth: 4,
+                hideOtherSidebarContent: false,
+                namespace: 'docsify-demo',
+            }
+        }
+    </script>
+    <!-- docsify的js依赖 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <!-- emoji表情支持 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <!-- 图片放大缩小支持 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <!-- 搜索功能支持 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+</body>
+
+</html>
+```
+
+| Component |     File      |
+| :-------: | :-----------: |
+|  Sidebar  |  _sidebar.md  |
+|  Navicat  |  _navbar.md   |
+|   Cover   | _coverpage.md |
+
+
+
+## References
+
+[Official](https://docsify.js.org/)
+
+[使用开源文档工具docsify，用写博客的姿势写文档](https://www.cnblogs.com/throwable/p/13605289.html)
