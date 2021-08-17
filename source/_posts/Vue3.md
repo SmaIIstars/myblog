@@ -207,9 +207,71 @@ info: {
 
 ## Diff
 
-### VNode
+### Vnode
 
 **The essence of VNode(Virtual Node) is a JavaScript Object**
+
+```js
+// <div class="title" style="font-size: 30px; color: red;">Vnode</div>
+const vnode = {
+  type: 'div',
+  props: {
+    class: "title",
+    style: {
+      "font-size": "30px",
+      color: "red"
+    }
+  },
+  children: "Vnode"
+}
+```
+
+```mermaid
+graph LR
+  template --> VNode --> RealDOM
+```
+
+```html
+<!-- First convert the template to virtual DOM, and then mount it to the real DOM -->
+<div>
+  <p>
+    <i>1</i>
+    <b>2</b>
+  </p>
+  <span>3</span>
+  <strong>4</strong>
+</div>
+```
+
+```mermaid
+graph TB
+	div --> p
+	div --> span
+	div --> strong
+	p --> i
+	p --> b
+```
+
+### Diff
+
+#### Unkeyed
+
+**Different letters  represent different nodes (The number is added here to facilitate drawing). The nodes are compared in turn, and if they are different, the nodes are updated. Finallym if there are more old nodes than new nodes, the remaining nodes are removed, otherwish all of them are added.**
+
+```mermaid
+graph TB
+ a1-->a2
+ b1-->b2
+ c1--update-->f2 
+ d1--update-->c2
+ null--new-->d2
+```
+
+#### Keyed
+
+
+
+
 
 ## Source Code
 
@@ -217,3 +279,183 @@ info: {
 
 1. [vue@3.2.2](https://unpkg.com/vue@3.2.2/dist/vue.global.js)
 2. [Search the vue-next in Github](https://github.com/vuejs/vue-next)
+
+### Diff
+
+```typescript
+// packages/runtime-core/src/renderer.ts
+// diff
+const patchChildren: PatchChildrenFn = (
+  n1, // old nodes
+  n2, // new nodes
+  container,
+  anchor,
+  parentComponent,
+  parentSuspense,
+  isSVG,
+  slotScopeIds,
+  optimized = false
+) => {
+  const c1 = n1 && n1.children
+  const prevShapeFlag = n1 ? n1.shapeFlag : 0
+  const c2 = n2.children
+
+  const { patchFlag, shapeFlag } = n2
+  // fast path
+  if (patchFlag > 0) {
+    if (patchFlag & PatchFlags.KEYED_FRAGMENT) {
+      // this could be either fully-keyed or mixed (some keyed some not)
+      // presence of patchFlag means children are guaranteed to be arrays
+      // keyed
+      patchKeyedChildren(
+        c1 as VNode[],
+        c2 as VNodeArrayChildren,
+        container,
+        anchor,
+        parentComponent,
+        parentSuspense,
+        isSVG,
+        slotScopeIds,
+        optimized
+      )
+      return
+    } else if (patchFlag & PatchFlags.UNKEYED_FRAGMENT) {
+      // unkeyed
+      patchUnkeyedChildren(
+        c1 as VNode[],
+        c2 as VNodeArrayChildren,
+        container,
+        anchor,
+        parentComponent,
+        parentSuspense,
+        isSVG,
+        slotScopeIds,
+        optimized
+      )
+      return
+    }
+  }
+
+  // children has 3 possibilities: text, array or no children.
+  if (shapeFlag & ShapeFlags.TEXT_CHILDREN) {
+    // text children fast path
+    if (prevShapeFlag & ShapeFlags.ARRAY_CHILDREN) {
+      unmountChildren(c1 as VNode[], parentComponent, parentSuspense)
+    }
+    if (c2 !== c1) {
+      hostSetElementText(container, c2 as string)
+    }
+  } else {
+    if (prevShapeFlag & ShapeFlags.ARRAY_CHILDREN) {
+      // prev children was array
+      if (shapeFlag & ShapeFlags.ARRAY_CHILDREN) {
+        // two arrays, cannot assume anything, do full diff
+        patchKeyedChildren(
+          c1 as VNode[],
+          c2 as VNodeArrayChildren,
+          container,
+          anchor,
+          parentComponent,
+          parentSuspense,
+          isSVG,
+          slotScopeIds,
+          optimized
+        )
+      } else {
+        // no new children, just unmount old
+        unmountChildren(c1 as VNode[], parentComponent, parentSuspense, true)
+      }
+    } else {
+      // prev children was text OR null
+      // new children is array OR null
+      if (prevShapeFlag & ShapeFlags.TEXT_CHILDREN) {
+        hostSetElementText(container, '')
+      }
+      // mount new if array
+      if (shapeFlag & ShapeFlags.ARRAY_CHILDREN) {
+        mountChildren(
+          c2 as VNodeArrayChildren,
+          container,
+          anchor,
+          parentComponent,
+          parentSuspense,
+          isSVG,
+          slotScopeIds,
+          optimized
+        )
+      }
+    }
+  }
+}
+```
+
+```typescript
+// unked
+const patchUnkeyedChildren = (
+  c1: VNode[],
+  c2: VNodeArrayChildren,
+  container: RendererElement,
+  anchor: RendererNode | null,
+  parentComponent: ComponentInternalInstance | null,
+  parentSuspense: SuspenseBoundary | null,
+  isSVG: boolean,
+  slotScopeIds: string[] | null,
+  optimized: boolean
+) => {
+  c1 = c1 || EMPTY_ARR
+  c2 = c2 || EMPTY_ARR
+  // get length of old nodes
+  const oldLength = c1.length
+  // get length of new nodes
+  const newLength = c2.length
+  // get the minimum length
+  const commonLength = Math.min(oldLength, newLength)
+  let i
+
+  for (i = 0; i < commonLength; i++) {
+    const nextChild = (c2[i] = optimized
+      ? cloneIfMounted(c2[i] as VNode)
+      : normalizeVNode(c2[i]))
+
+    // Compare nodes one by one
+    patch(
+      c1[i],
+      nextChild,
+      container,
+      null,
+      parentComponent,
+      parentSuspense,
+      isSVG,
+      slotScopeIds,
+      optimized
+    )
+  }
+
+  // if the number of new nodes is less
+  if (oldLength > newLength) {
+    // remove old
+    unmountChildren(
+      c1,
+      parentComponent,
+      parentSuspense,
+      true,
+      false,
+      commonLength
+    )
+  } else {
+    // mount new
+    mountChildren(
+      c2,
+      container,
+      anchor,
+      parentComponent,
+      parentSuspense,
+      isSVG,
+      slotScopeIds,
+      optimized,
+      commonLength
+    )
+  }
+}
+```
+
