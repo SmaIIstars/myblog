@@ -32,7 +32,6 @@
     "hexo-tag-gantt": "git+https://github.com/threeq/hexo-tag-mermaid.git"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0",
     "cz-conventional-emoji": "^1.0.0"
   },
   "config": {
