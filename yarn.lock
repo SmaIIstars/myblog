@@ -781,20 +781,6 @@ cz-conventional-changelog@3.2.0:
   optionalDependencies:
     "@commitlint/load" ">6.1.1"
 
-cz-conventional-changelog@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.npm.taobao.org/cz-conventional-changelog/download/cz-conventional-changelog-3.3.0.tgz#9246947c90404149b3fe2cf7ee91acad3b7d22d2"
-  integrity sha1-kkaUfJBAQUmz/iz37pGsrTt9ItI=
-  dependencies:
-    chalk "^2.4.1"
-    commitizen "^4.0.3"
-    conventional-commit-types "^3.0.0"
-    lodash.map "^4.5.1"
-    longest "^2.0.1"
-    word-wrap "^1.0.3"
-  optionalDependencies:
-    "@commitlint/load" ">6.1.1"
-
 cz-conventional-emoji@^1.0.0:
   version "1.0.2"
   resolved "https://registry.nlark.com/cz-conventional-emoji/download/cz-conventional-emoji-1.0.2.tgz#61d4a208ea62c7b780f1b486eda41b350437b156"
@@ -1615,6 +1601,22 @@ hexo-cli@^4.0.0:
   version "4.2.0"
   resolved "https://registry.npm.taobao.org/hexo-cli/download/hexo-cli-4.2.0.tgz#74647bc72a90b9cebf04af5bc70839ab281a305d"
   integrity sha1-dGR7xyqQuc6/BK9bxwg5qygaMF0=
+  dependencies:
+    abbrev "^1.1.1"
+    bluebird "^3.5.5"
+    chalk "^4.0.0"
+    command-exists "^1.2.8"
+    hexo-fs "^3.0.1"
+    hexo-log "^2.0.0"
+    hexo-util "^2.0.0"
+    minimist "^1.2.5"
+    resolve "^1.11.0"
+    tildify "^2.0.0"
+
+hexo-cli@^4.3.0:
+  version "4.3.0"
+  resolved "http://bnpm.byted.org/hexo-cli/-/hexo-cli-4.3.0.tgz#4bb2bf11a30fae601f2f53ac0cb833fee3187649"
+  integrity sha512-lr46h1tK1RNQJAQZbzKYAWGsmqF5DLrW6xKEakqv/o9JqgdeempBjIm7HqjcZEUBpWij4EO65X6YJiDmT9LR7g==
   dependencies:
     abbrev "^1.1.1"
     bluebird "^3.5.5"
