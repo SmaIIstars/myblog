@@ -465,17 +465,17 @@ export default class App extends Component {
 
   ```react
   import React, { Component } from "react";
-
+  
   export default class App extends Component {
     constructor(props) {
       super();
       this.props = props;
-
+  
       this.state = {
         counter: 0,
       };
     }
-
+  
     render() {
       return (
         <div>
@@ -490,22 +490,22 @@ export default class App extends Component {
         </div>
       );
     }
-
+  
     increment() {
       // It is merged each time, and the front is covered by later
       // this.setState({
       //   counter: this.state.counter + 1,
       // });
-
+  
       // this.setState({
       //   counter: this.state.counter + 1,
       // });
-
+  
       // this.setState({
       //   counter: this.state.counter + 1,
       // });
       // couter is 1
-
+  
       //Accumulate when meraging
       // Each time a meraging is made, the later state is used for accumulation, and then a new one is returned
       this.setState((prevState, props) => {
@@ -569,17 +569,17 @@ React is not just design for browsers
 
   ```react
   import React, { Component } from "react";
-
+  
   function ChildCpn(props) {
     const { name, age, height } = props;
-
+  
     return (
       <div>
         <h2>Subclass:{name + " " + age + " " + height}</h2>
       </div>
     );
   }
-
+  
   export default class App extends Component {
     render() {
       return (
@@ -1007,15 +1007,15 @@ Data is handle by a React Component ? Controlled : Uncontrolled
 
   ```react
   import React, { createRef, PureComponent } from "react";
-
+  
   export default class App extends PureComponent {
     constructor(props) {
       super();
-
+  
       this.state = {
         username: "",
       };
-
+  
       this.usernameRef = createRef();
     }
     render() {
@@ -1035,13 +1035,13 @@ Data is handle by a React Component ? Controlled : Uncontrolled
                 ref={this.usernameRef}
               />
             </label>
-
+  
             <input type="submit" value="submit" />
           </form>
         </div>
       );
     }
-
+  
     handleSubmit(event) {
       event.preventDefault();
       console.log(this.usernameRef.current.value);
@@ -1199,7 +1199,7 @@ export default EnhanceComponent(App);
   // index.js
   import React, { memo } from "react";
   import { HomeWrapper, TitleWrapper } from "./style";
-
+  
   const index = memo(function index(props) {
     return (
       <HomeWrapper>
@@ -1213,14 +1213,14 @@ export default EnhanceComponent(App);
     );
   });
   export default index;
-
+  
   // style.js
   import styled from "styled-components";
-
+  
   export const HomeWrapper = styled.div`
     font-size: 20px;
     color: red;
-
+  
     .banner {
       background-color: blue;
       span {
@@ -1237,7 +1237,7 @@ export default EnhanceComponent(App);
       }
     }
   `;
-
+  
   // Use the theme props
   export const TitleWrapper = styled.h2`
     text-decoration: underline;
@@ -1261,7 +1261,7 @@ export default EnhanceComponent(App);
         textColor: "blue",
       };
     }
-
+  
     render() {
       return (
         <div>
@@ -1273,12 +1273,12 @@ export default EnhanceComponent(App);
       );
     }
   }
-
+  
   export default index;
-
+  
   // style.js
   import styled from "styled-components";
-
+  
   // attrs function can set some default value
   export const SSInput = styled.input.attrs({
     placeholder: "SmallStars",
@@ -1311,10 +1311,10 @@ export default EnhanceComponent(App);
     );
   });
   export default index;
-
+  
   // style.js
   import styled from "styled-components";
-
+  
   export const Button = styled.button`
     padding: 10px 20px;
     color: red;
@@ -1432,33 +1432,33 @@ sequenceDiagram
    *         index.js
    *         reducer.js
    */
-
+  
   // store
   // index.js
   import redux from "redux";
   import reducer from "./reducer.js";
   const store = redux.createStore(reducer);
   export default store;
-
+  
   // actionCreator.js
   import { ADD_NUMBER, SUB_NUMBER } from "./constants.js";
-
+  
   export const addAction = (num) => ({
     type: ADD_NUMBER,
     num,
   });
-
+  
   export const subAction = (num) => ({
     type: SUB_NUMBER,
     num,
   });
-
+  
   // reducer.js
   import { ADD_NUMBER, SUB_NUMBER } from "./constants.js";
   const defaultState = {
     counter: 0,
   };
-
+  
   function reducer(state = defaultState, action) {
     switch (action.type) {
       case ADD_NUMBER:
@@ -1469,17 +1469,17 @@ sequenceDiagram
         return state;
     }
   }
-
+  
   export default reducer;
-
+  
   // index.js
   import store from "./store/index.js";
   import { addAction, subAction } from "./store/actionCreator.js";
-
+  
   store.subscribe(() => {
     console.log(store.getState());
   });
-
+  
   store.dispatch(addAction(10));
   store.dispatch(addAction(15));
   store.dispatch(addAction(10));
@@ -1690,13 +1690,13 @@ ReactDOM.render(
   // generator Function
   sagaMiddleware.run(mySaga);
   export default store;
-
+  
   // saga.js
   import axios from "axios";
   import { all, put, takeEvery } from "redux-saga/effects";
   import { FETCH_GET_MULTIDATA } from "./constants";
   import { changeBannerAction, changeRecommendAction } from "./actionCreator";
-
+  
   function* fetchGetMultidata(action) {
     const {
       data: { data },
@@ -1715,12 +1715,12 @@ ReactDOM.render(
     yield takeEvery(FETCH_GET_MULTIDATA, fetchGetMultidata);
   }
   export default mySaga;
-
+  
   // actionCreator.js
   export const fetchGetMultidataAction = () => ({
     type: FETCH_GET_MULTIDATA,
   });
-
+  
   // App.js
   const mapDispatchToProps = (dispatch) => ({
     // Pass in an object
@@ -1816,7 +1816,7 @@ ReactDOM.render(
     var ref = null;
     var self = null;
     var source = null;
-
+  
     // keeping the configs
     if (config != null) {
       if (hasValidRef(config)) {
@@ -1825,14 +1825,14 @@ ReactDOM.render(
           warnIfStringRefCannotBeAutoConverted(config);
         }
       }
-
+  
       if (hasValidKey(config)) {
         key = '' + config.key;
       }
-
+  
       self = config.__self === undefined ? null : config.__self;
       source = config.__source === undefined ? null : config.__source; // Remaining properties are added to a new props object
-
+  
       for (propName in config) {
         if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
           props[propName] = config[propName];
@@ -1840,9 +1840,6 @@ ReactDOM.render(
       }
     } // Children can be more than one argument, and those are transferred onto
     // the newly allocated props object.
-  ```
-
-
     var childrenLength = arguments.length - 2;
     // get the child
     if (childrenLength === 1) {
@@ -1853,7 +1850,7 @@ ReactDOM.render(
       for (var i = 0; i < childrenLength; i++) {
         childArray[i] = arguments[i + 2];
       }
-    
+  
       {
         // Cannot modify the value of the object after Object.freeze(object)
         if (Object.freeze) {
@@ -1862,43 +1859,42 @@ ReactDOM.render(
       }
       props.children = childArray;
     } // Resolve default props
-    
+  
     //...
     return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);
   }
   ```
-
+  
 - setState
 
   ```react
-  // node_modules\react\cjs\react.development.js
-  // setState function is mounted on the prototype chain of Component
-  Component.prototype.setState = function (partialState, callback) {
-    this.updater.enqueueSetState(this, partialState, callback, 'setState');
-  };
-
-  // react-reconciler\src\ReactFiberClassComponent.js
-  // classComponentUpdater function
-  const classComponentUpdater={
-      enqueueSetState(inst, payload, callback) {
-      const fiber = getInstance(inst);
-      const currentTime = requestCurrentTime();	// return the different time accroding the different context
-      										// like composite Event and setTimeout is different context
-      const suspenseConfig = requestCurrentSuspenseConfig()
-      const expirationTime = computeExpirationForFiber(currentTime, fiber, suspenseConfig); // get the expiration time
+    // node_modules\react\cjs\react.development.js
+    // setState function is mounted on the prototype chain of Component
+    Component.prototype.setState = function (partialState, callback) {
+      this.updater.enqueueSetState(this, partialState, callback, 'setState');
+    };
+  
+    // react-reconciler\src\ReactFiberClassComponent.js
+    // classComponentUpdater function
+    const classComponentUpdater={
+        enqueueSetState(inst, payload, callback) {
+        const fiber = getInstance(inst);
+        const currentTime = requestCurrentTime();	// return the different time accroding the different context
+        										// like composite Event and setTimeout is different context
+        const suspenseConfig = requestCurrentSuspenseConfig()
+        const expirationTime = computeExpirationForFiber(currentTime, fiber, suspenseConfig); // get the expiration time
+        //...
+      }
+    }
+  
+    // computeExpirationForFiber function
+    function computeExpirationForFiber(currentTime, fiber, suspenseConfig) {
+      //...
+      if ((mode & ConcurrentMode) === NoMode) {
+        return priorityLevel === ImmediatePriority ? Sync : Batched;	//  Sync ? setState is sync : setState is async
+      }
       //...
     }
-  }
-
-
-  // computeExpirationForFiber function
-  function computeExpirationForFiber(currentTime, fiber, suspenseConfig) {
-    //...
-    if ((mode & ConcurrentMode) === NoMode) {
-      return priorityLevel === ImmediatePriority ? Sync : Batched;	//  Sync ? setState is sync : setState is async
-    }
-    //...
-  }
   ```
 
 - setStateMerging
@@ -1919,7 +1915,7 @@ ReactDOM.render(
       pending.next = update;
     }
     // ...
-
+  
     // setState Merging
     do {
         //...
@@ -1939,14 +1935,14 @@ ReactDOM.render(
     // ...
     sharedQueue.pending = update;
   }
-
+  
   // getStateFromUpdate function return a newState
   case UpdateState: {
     // ...
     // Merge the partial state and the previous state.
     return Object.assign({}, prevState, partialState);
   }
-
+  
   // pass in function
   case UpdateState: {
     // ...
@@ -1988,18 +1984,18 @@ ReactDOM.render(
   	// ...
       return shouldUpdate;
     }
-
+  
     // If it's PureReactComponent, shallow comparison is made
     if (ctor.prototype && ctor.prototype.isPureReactComponent) {
       return (
         !shallowEqual(oldProps, newProps) || !shallowEqual(oldState, newState)
       );
     }
-
+  
     // default return true
     return true;
   }
-
+  
   // packages\react\src\ReactBaseClasses.js
   Component.prototype.isReactComponent = {};
   const pureComponentPrototype = (PureComponent.prototype = new ComponentDummy());
@@ -2013,7 +2009,7 @@ ReactDOM.render(
     if (is(objA, objB)) {
       return true;
     }
-
+  
     if (
       typeof objA !== 'object' ||
       objA === null ||
@@ -2022,14 +2018,14 @@ ReactDOM.render(
     ) {
       return false;
     }
-
+  
     const keysA = Object.keys(objA);
     const keysB = Object.keys(objB);
-
+  
     if (keysA.length !== keysB.length) {
       return false;
     }
-
+  
     // Test for A's keys different from B.
     for (let i = 0; i < keysA.length; i++) {
       if (
@@ -2039,7 +2035,7 @@ ReactDOM.render(
         return false;
       }
     }
-
+  
     return true;
   }
   ```
@@ -2060,11 +2056,11 @@ ReactDOM.render(
   		// ...
       var hasChanged = false;
       var nextState = {};
-
+  
       for (var _i = 0; _i < finalReducerKeys.length; _i++) {
         var _key = finalReducerKeys[_i];
         var reducer = finalReducers[_key];
-
+  
         // get the before and after value
         var previousStateForKey = state[_key];
         var nextStateForKey = reducer(previousStateForKey, action);
@@ -2073,7 +2069,7 @@ ReactDOM.render(
         nextState[_key] = nextStateForKey;
         hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
       }
-
+  
       hasChanged = hasChanged || finalReducerKeys.length !== Object.keys(state).length;
       return hasChanged ? nextState : state;
     };

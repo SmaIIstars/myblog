@@ -335,3 +335,47 @@ const polymerize = (arr) => {
   return res;
 };
 ```
+
+## DFS
+
+**[Max Area of Island](https://leetcode-cn.com/problems/max-area-of-island/)**
+
+```js
+const maxAreaOfIsland = (grid) => {
+  // up down left right
+  const dx = [0, 0, -1, 1];
+  const dy = [-1, 1, 0, 0];
+  if (!grid) return 0;
+  // width height
+  const [w, h] = [grid[0].length, grid.length];
+  // curMaxLen is the number of a block
+  let res = 0,
+    curMaxLen = 0;
+
+  const dfs = (x, y) => {
+    // Judge the boundary conditions
+    if (x >= h || y >= w || x < 0 || y < 0 || !grid[x][y]) return;
+    // Mark the point reached
+    grid[x][y] = 0;
+    curMaxLen++;
+
+    // Spread to surrounding points
+    for (let i = 0; i < 4; i++) {
+      dfs(x + dx[i], y + dy[i]);
+    }
+  };
+
+  for (let i = 0; i < h; i++) {
+    for (let j = 0; j < w; j++) {
+      // if the value is 0
+      if (!grid[i][j]) continue;
+      dfs(i, j);
+      res = Math.max(res, curMaxLen);
+      // Need to clear the length after traversing a part
+      curMaxLen = 0;
+    }
+  }
+
+  return res;
+};
+```
