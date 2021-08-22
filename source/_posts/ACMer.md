@@ -35,7 +35,7 @@ var merge = function (intervals) {
 };
 ```
 
-#### [Diagonal Traverse](https://leetcode-cn.com/problems/diagonal-traverse/)
+### [Diagonal Traverse](https://leetcode-cn.com/problems/diagonal-traverse/)
 
 ```js
 // Traverse the array with each value in the first row as starting point in the upper right corner, and finally reverse the odd traversal array.
@@ -247,6 +247,30 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
 
   // console.log(dp);
   return dp[h - 1][w - 1];
+};
+```
+
+### [Best Time to Buy and Sell Stock](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+
+```js
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function (prices) {
+  // judge the boundary conditions
+  if (!prices || prices.length === 1) return 0;
+  let len = prices.length,
+    dp = [0],
+    minPrice = prices[0];
+
+  for (let i = 1; i < len; i++) {
+    // find the minimum price
+    minPrice = Math.min(minPrice, prices[i]);
+    // record the maximum profit of per day
+    dp.push(Math.max(dp[i - 1], prices[i] - minPrice));
+  }
+  return dp[len - 1];
 };
 ```
 
