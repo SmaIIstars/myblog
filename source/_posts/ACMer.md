@@ -35,7 +35,7 @@ var merge = function (intervals) {
 };
 ```
 
-#### [Diagonal Traverse](https://leetcode-cn.com/problems/diagonal-traverse/)
+### [Diagonal Traverse](https://leetcode-cn.com/problems/diagonal-traverse/)
 
 ```js
 // Traverse the array with each value in the first row as starting point in the upper right corner, and finally reverse the odd traversal array.
@@ -250,6 +250,35 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
 };
 ```
 
+
+
+### Best Time to Buy and Sell Stock
+
+```js
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+  if(!prices || prices.length <= 1) return 0
+	// judge the boundary conditions
+  let len = prices.length,
+  dp = [0],
+  minVal = prices[0]
+
+  for(let i = 1; i < len; i++){
+    // find the minimum price
+    minVal = Math.min(prices[i], minVal)
+    // record the maximum profit of per day
+    dp.push(Math.max(dp[i-1], prices[i]-minVal))
+  }
+  
+  return dp[len-1]
+};
+```
+
+
+
 ## Greedy
 
 ### [ Jump Game](https://leetcode-cn.com/problems/jump-game/)
@@ -338,7 +367,7 @@ const polymerize = (arr) => {
 
 ## DFS
 
-**[Max Area of Island](https://leetcode-cn.com/problems/max-area-of-island/)**
+### [Max Area of Island](https://leetcode-cn.com/problems/max-area-of-island/)
 
 ```js
 const maxAreaOfIsland = (grid) => {
@@ -379,3 +408,31 @@ const maxAreaOfIsland = (grid) => {
   return res;
 };
 ```
+
+### [Permutations](https://leetcode-cn.com/problems/permutations/)
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+
+const permute = function (nums) {
+  const res = [];
+  const dfs = (curPath) => {
+    // All  number has been recorded
+    if (curPath.length === nums.length) return res.push([...curPath]);
+    //  Traverse array to find the unrecorded numbers
+    for (let i = 0; i < nums.length; i++) {
+      if (curPath.indexOf(nums[i]) !== -1) continue;
+      curPath.push(nums[i]);
+      dfs(curPath);
+      curPath.pop();
+    }
+  };
+  // Initialize the path array
+  dfs([]);
+  return res;
+};
+```
+
