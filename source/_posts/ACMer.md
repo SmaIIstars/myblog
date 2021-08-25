@@ -250,34 +250,29 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
 };
 ```
 
-
-
-### Best Time to Buy and Sell Stock
+### [Best Time to Buy and Sell Stock](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
 
 ```js
 /**
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
-  if(!prices || prices.length <= 1) return 0
-	// judge the boundary conditions
+var maxProfit = function (prices) {
+  // judge the boundary conditions
+  if (!prices || prices.length === 1) return 0;
   let len = prices.length,
-  dp = [0],
-  minVal = prices[0]
+    dp = [0],
+    minPrice = prices[0];
 
-  for(let i = 1; i < len; i++){
+  for (let i = 1; i < len; i++) {
     // find the minimum price
-    minVal = Math.min(prices[i], minVal)
+    minPrice = Math.min(minPrice, prices[i]);
     // record the maximum profit of per day
-    dp.push(Math.max(dp[i-1], prices[i]-minVal))
+    dp.push(Math.max(dp[i - 1], prices[i] - minPrice));
   }
-  
-  return dp[len-1]
+  return dp[len - 1];
 };
 ```
-
-
 
 ## Greedy
 
@@ -435,4 +430,3 @@ const permute = function (nums) {
   return res;
 };
 ```
-
