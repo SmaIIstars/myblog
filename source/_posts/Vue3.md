@@ -271,6 +271,227 @@ graph TB
 
 
 
+## Responsive principle
+
+```js
+// Vue3 Responsive principle
+// utils
+const isObject = (val) => {
+  return !!val && typeof val === "object";
+};
+
+const dataLog = (title, arr) => {
+  console.log(title);
+  arr.forEach((i) => {
+    console.log(i);
+  });
+};
+
+/**
+ * 13.To prevent the duplication of proxy
+ * toProxy: {Original: Proxy}
+ * toRaw: {Proxy: Original}
+ */
+const toProxy = new WeakMap(),
+  toRaw = new WeakMap();
+
+// 5.Create responsive Object
+const createReactiveObject = (target) => {
+  // 6.Judging the target type
+  if (!isObject(target)) return target;
+
+  // 14.If the object has been proxied, return the proxied object
+  const proxy = toProxy.get(target);
+  if (proxy) return proxy;
+  if (toRaw.has(target)) return target;
+
+  const baseHandle = {
+    get: (target, key, receiver) => {
+      console.log("get");
+      // 7.Use Reflect to get the value
+      // return target[key]
+      const res = Reflect.get(target, key, receiver);
+
+      // 21.Collection dependencies
+      // correspond the keys of current object width reactiveEffects
+      track(target, key);
+
+      // 9.consider the case of multi-level object
+      return isObject(res) ? reactive(res) : res;
+    },
+    /**
+     * target: original object ({name: 'smallstars'})
+     * key: keyword (name)
+     * value: new value
+     * receiver: current proxied object (observer)
+     */
+    set: (target, key, value, receiver) => {
+      console.log("set");
+      // This way cannot determine whether the operation is successful
+      // target[key] = value;
+      // console.log(target, key, value, receiver);
+
+      // 10.Use Reflect to determine the status of operation
+      const res = Reflect.set(target, key, value, receiver);
+
+      // 25.Determine whether it is a new attribute
+      const hadKey = target.hasOwnProperty(key);
+      // Avoid meaningless rendering views (eg: array.length)
+      if (!hadKey) {
+        // data changed, need to rendering views
+        // console.log("rendering");
+        trigger(target, "add", key);
+      } else {
+        // property changed, don't need to rendering views
+        // console.log("no rendering");
+        trigger(target, "set", key);
+      }
+
+      // 11.Return the res
+      return res;
+    },
+    // 12.Delete the property by key
+    deleteProperty: (target, key) => {
+      console.log("del");
+      return Reflect.deleteProperty(target, key);
+    },
+  };
+  // 7.Create the observer of target
+  // Use the baseHandle(ProxyHandler) function to truncate the operation
+  let observed = new Proxy(target, baseHandle);
+
+  // 15.Mark the original object has been proxied
+  toProxy.set(target, observed);
+  toRaw.set(observed, target);
+
+  // 8.Return the observed
+  return observed;
+};
+
+// 4.Turn data into responsive
+const reactive = (target) => {
+  return createReactiveObject(target);
+};
+
+// collected of dependencies
+// cache responsive effects
+const activeEffectStack = [];
+
+// if the target[key] changed, executed the effect
+/*
+targetsMap: {
+  [target]: {
+    [key]: deps;
+  }
+}
+deps: [effects]
+*/
+// 22.use targetsMap to collect dependencies of per targets[key]
+const targetsMap = new WeakMap();
+const track = (target, key) => {
+  // 23.Determine whether the stack is empty
+  let effect = activeEffectStack[activeEffectStack.length - 1];
+
+  // 24.Determine whether the targetsMap is empty, initialize it
+  // console.log(target, key);
+  if (effect) {
+    let depsMap = targetsMap.get(target);
+    if (!depsMap) targetsMap.set(target, (depsMap = new Map()));
+    let deps = depsMap.get(key);
+    if (!deps) depsMap.set(key, (deps = new Set()));
+
+    if (!deps.has(effect)) deps.add(effect);
+  }
+};
+
+// 26.Called the effect to update views
+const trigger = (target, type, key) => {
+  const depsMap = targetsMap.get(target);
+  if (depsMap) {
+    const deps = depsMap.get(key);
+    if (deps) {
+      deps.forEach((effect) => {
+        effect();
+      });
+    }
+  }
+};
+
+/**
+ * 19.Use stack cache fn(if this effect has other effect, there will be multiple values in the stack)
+ * 1).push effect into stack
+ * 2).execute fn
+ * 3).pop the effect
+ */
+const run = (effect, fn) => {
+  console.log("run");
+  // prevent errors when fn is executed
+  try {
+    activeEffectStack.push(effect);
+    // 20. execute fn
+    fn();
+  } finally {
+    activeEffectStack.pop();
+  }
+};
+
+// 18.Create responsive effect
+const createReactiveEffect = (fn) => {
+  let effect = () => {
+    return run(effect, fn);
+  };
+  return effect;
+};
+
+// 17.Turn effect into responsive
+const effect = (fn) => {
+  let reactiveEffect = createReactiveEffect(fn);
+  // executed firstly
+  reactiveEffect();
+  return reactiveEffect;
+};
+
+// let proxy = reactive({ name: "smallstars" });
+// // This effect is executed once when the dependencies are collected, and then called when the subsequent data is updated.
+// effect(() => {
+//   console.log(1);
+// });
+// proxy.name = "blackangel";
+
+// test
+// const info = { name: { firstName: "small", lastName: "stars" } };
+// let proxy = reactive(info);
+
+// // We need to prevent duplication of proxy
+// // use WeakMap to store it
+// reactive(info);
+// reactive(info);
+// // reactive(info);
+
+// const arr = [1, 2, 3];
+// let proxy = reactive(arr);
+// // it will trigger operation twice. 1.push 2.length
+// proxy.push(4);
+
+// 1.Defined the data (ref/reactive/computed)
+const info = reactive({ counter1: 1, counter2: 1 });
+
+// 16.Side effects of data changes
+effect(() => {
+  console.log("counter1:", info.counter1);
+  // console.log("counter2:", info.counter2);
+});
+
+// 2.Change the data value
+setInterval(() => {
+  info.counter1++;
+}, 3000);
+
+// setInterval(() => {
+//   info.counter2 *= 2;
+// }, 1000);
+```
+
 
 
 ## Source Code
