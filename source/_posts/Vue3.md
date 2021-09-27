@@ -295,9 +295,9 @@ const dataLog = (title, arr) => {
 const toProxy = new WeakMap(),
   toRaw = new WeakMap();
 
-// 5.Create responsive Object
+// 4.Create responsive Object
 const createReactiveObject = (target) => {
-  // 6.Judging the target type
+  // 5.Judging the target type
   if (!isObject(target)) return target;
 
   // 14.If the object has been proxied, return the proxied object
@@ -308,7 +308,7 @@ const createReactiveObject = (target) => {
   const baseHandle = {
     get: (target, key, receiver) => {
       console.log("get");
-      // 7.Use Reflect to get the value
+      // 8.Use Reflect to get the value
       // return target[key]
       const res = Reflect.get(target, key, receiver);
 
@@ -356,7 +356,7 @@ const createReactiveObject = (target) => {
       return Reflect.deleteProperty(target, key);
     },
   };
-  // 7.Create the observer of target
+  // 6.Create the observer of target
   // Use the baseHandle(ProxyHandler) function to truncate the operation
   let observed = new Proxy(target, baseHandle);
 
@@ -364,11 +364,11 @@ const createReactiveObject = (target) => {
   toProxy.set(target, observed);
   toRaw.set(observed, target);
 
-  // 8.Return the observed
+  // 7.Return the observed
   return observed;
 };
 
-// 4.Turn data into responsive
+// 3.Turn data into responsive
 const reactive = (target) => {
   return createReactiveObject(target);
 };
@@ -679,4 +679,40 @@ const patchUnkeyedChildren = (
   }
 }
 ```
+
+## Differences between Vue2 and Vue3
+
+### Performance
+
+#### Diff algorithm optimization
+
+- Vnodes in Vue2 are a full comparison
+
+  The simple summary is that the pointers on both sides move to the middle for comparison, until one of the traversal of oldCh or newCh is completed. In the  Vue2, virtual DOM is a full comparison process. When the object is too large, the update of Vnodes will be slower.
+
+  ![img](https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/vue/vue2-diff-img1.jpg)
+
+- Vue3 added a static flag (PatchFlag). During the comparison, only nodes with static flags are compared, and the specific comparison content can be learned through the flags.
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
