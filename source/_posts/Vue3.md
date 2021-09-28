@@ -35,7 +35,7 @@ vue create project-name
 
 ### v-once
 
-**The itself and its subcomponent are only renderd once, and the view is no longer update when if the value changes**
+**The itself and its subcomponent are only rendered once, and the view is no longer update when if the value changes**
 
 ```vue
 <div v-once>{{ counter }}</div>
@@ -214,16 +214,16 @@ info: {
 ```js
 // <div class="title" style="font-size: 30px; color: red;">Vnode</div>
 const vnode = {
-  type: 'div',
+  type: "div",
   props: {
     class: "title",
     style: {
       "font-size": "30px",
-      color: "red"
-    }
+      color: "red",
+    },
   },
-  children: "Vnode"
-}
+  children: "Vnode",
+};
 ```
 
 ```mermaid
@@ -256,20 +256,18 @@ graph TB
 
 #### Unkeyed
 
-**Different letters  represent different nodes (The number is added here to facilitate drawing). The nodes are compared in turn, and if they are different, the nodes are updated. Finallym if there are more old nodes than new nodes, the remaining nodes are removed, otherwish all of them are added.**
+**Different letters represent different nodes (The number is added here to facilitate drawing). The nodes are compared in turn, and if they are different, the nodes are updated. Finallym if there are more old nodes than new nodes, the remaining nodes are removed, other wish all of them are added.**
 
 ```mermaid
 graph TB
  a1-->a2
  b1-->b2
- c1--update-->f2 
+ c1--update-->f2
  d1--update-->c2
  null--new-->d2
 ```
 
 #### Keyed
-
-
 
 ## Responsive principle
 
@@ -492,8 +490,6 @@ setInterval(() => {
 // }, 1000);
 ```
 
-
-
 ## Source Code
 
 **Here will brief explain part of the source code**
@@ -517,11 +513,11 @@ const patchChildren: PatchChildrenFn = (
   slotScopeIds,
   optimized = false
 ) => {
-  const c1 = n1 && n1.children
-  const prevShapeFlag = n1 ? n1.shapeFlag : 0
-  const c2 = n2.children
+  const c1 = n1 && n1.children;
+  const prevShapeFlag = n1 ? n1.shapeFlag : 0;
+  const c2 = n2.children;
 
-  const { patchFlag, shapeFlag } = n2
+  const { patchFlag, shapeFlag } = n2;
   // fast path
   if (patchFlag > 0) {
     if (patchFlag & PatchFlags.KEYED_FRAGMENT) {
@@ -538,8 +534,8 @@ const patchChildren: PatchChildrenFn = (
         isSVG,
         slotScopeIds,
         optimized
-      )
-      return
+      );
+      return;
     } else if (patchFlag & PatchFlags.UNKEYED_FRAGMENT) {
       // unkeyed
       patchUnkeyedChildren(
@@ -552,8 +548,8 @@ const patchChildren: PatchChildrenFn = (
         isSVG,
         slotScopeIds,
         optimized
-      )
-      return
+      );
+      return;
     }
   }
 
@@ -561,10 +557,10 @@ const patchChildren: PatchChildrenFn = (
   if (shapeFlag & ShapeFlags.TEXT_CHILDREN) {
     // text children fast path
     if (prevShapeFlag & ShapeFlags.ARRAY_CHILDREN) {
-      unmountChildren(c1 as VNode[], parentComponent, parentSuspense)
+      unmountChildren(c1 as VNode[], parentComponent, parentSuspense);
     }
     if (c2 !== c1) {
-      hostSetElementText(container, c2 as string)
+      hostSetElementText(container, c2 as string);
     }
   } else {
     if (prevShapeFlag & ShapeFlags.ARRAY_CHILDREN) {
@@ -581,16 +577,16 @@ const patchChildren: PatchChildrenFn = (
           isSVG,
           slotScopeIds,
           optimized
-        )
+        );
       } else {
         // no new children, just unmount old
-        unmountChildren(c1 as VNode[], parentComponent, parentSuspense, true)
+        unmountChildren(c1 as VNode[], parentComponent, parentSuspense, true);
       }
     } else {
       // prev children was text OR null
       // new children is array OR null
       if (prevShapeFlag & ShapeFlags.TEXT_CHILDREN) {
-        hostSetElementText(container, '')
+        hostSetElementText(container, "");
       }
       // mount new if array
       if (shapeFlag & ShapeFlags.ARRAY_CHILDREN) {
@@ -603,11 +599,11 @@ const patchChildren: PatchChildrenFn = (
           isSVG,
           slotScopeIds,
           optimized
-        )
+        );
       }
     }
   }
-}
+};
 ```
 
 ```typescript
@@ -623,20 +619,20 @@ const patchUnkeyedChildren = (
   slotScopeIds: string[] | null,
   optimized: boolean
 ) => {
-  c1 = c1 || EMPTY_ARR
-  c2 = c2 || EMPTY_ARR
+  c1 = c1 || EMPTY_ARR;
+  c2 = c2 || EMPTY_ARR;
   // get length of old nodes
-  const oldLength = c1.length
+  const oldLength = c1.length;
   // get length of new nodes
-  const newLength = c2.length
+  const newLength = c2.length;
   // get the minimum length
-  const commonLength = Math.min(oldLength, newLength)
-  let i
+  const commonLength = Math.min(oldLength, newLength);
+  let i;
 
   for (i = 0; i < commonLength; i++) {
     const nextChild = (c2[i] = optimized
       ? cloneIfMounted(c2[i] as VNode)
-      : normalizeVNode(c2[i]))
+      : normalizeVNode(c2[i]));
 
     // Compare nodes one by one
     patch(
@@ -649,7 +645,7 @@ const patchUnkeyedChildren = (
       isSVG,
       slotScopeIds,
       optimized
-    )
+    );
   }
 
   // if the number of new nodes is less
@@ -662,7 +658,7 @@ const patchUnkeyedChildren = (
       true,
       false,
       commonLength
-    )
+    );
   } else {
     // mount new
     mountChildren(
@@ -675,9 +671,9 @@ const patchUnkeyedChildren = (
       slotScopeIds,
       optimized,
       commonLength
-    )
+    );
   }
-}
+};
 ```
 
 ## Differences between Vue2 and Vue3
@@ -688,31 +684,8 @@ const patchUnkeyedChildren = (
 
 - Vnodes in Vue2 are a full comparison
 
-  The simple summary is that the pointers on both sides move to the middle for comparison, until one of the traversal of oldCh or newCh is completed. In the  Vue2, virtual DOM is a full comparison process. When the object is too large, the update of Vnodes will be slower.
+  The simple summary is that the pointers on both sides move to the middle for comparison, until one of the traversal of oldCh or newCh is completed. In the Vue2, virtual DOM is a full comparison process. When the object is too large, the update of Vnodes will be slower.
 
   ![img](https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/vue/vue2-diff-img1.jpg)
 
 - Vue3 added a static flag (PatchFlag). During the comparison, only nodes with static flags are compared, and the specific comparison content can be learned through the flags.
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
