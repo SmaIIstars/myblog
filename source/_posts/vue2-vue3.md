@@ -2,38 +2,29 @@
 title: vue2-vue3
 abbrlink: 9359b45b
 date: 2021-09-10 12:32:13
-tags:
+tags: vue
 ---
 
-# Vue3 优化简述
+# Vue3 optimization
 
-## Vue2 与 Vue3 的区别
+## Differences of Vue2 and Vue3
 
-1. 性能比 Vue2 高
-2. 按需打包，打包体积更小
-3. [Composition API](https://bytedance.feishu.cn/docs/doccnlTJKSq2edPrLtucFHlQgYe) （类似 React hooks）
-4. Fragment, Teleport, Suspense
-5. 更友好的支持兼容 TS
-6. Custom Renderer API（自定义渲染 API）
+### Performance
 
-### 性能更高
+- diff Algorithm
+  - Vnodes in Vue2 will be completely compared
+  - Vue3 adds a static flag(PatchFlat). While comparing, only nodes with static flags are compared, and the specific comparison content can be learned through the flags
 
-- diff 算法优化
-  - Vue2 中 Vnode 全量比较
-  - Vue3 新增静态标记（patch flag），对比时只对比有静态标记的节点，可通过标记得知具体的比较内容
+![Vue2 diff]()
 
-![img](https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MjVmMTBiNmM1ZmEwMGVhMTk5Mzc0YTY3YmEzOGZmZWFfTmgyd2Zac1ZRcUhSOVVRd3hvOEg2RGxzSnBWMTQweFRfVG9rZW46Ym94Y25VWUJjNUF6aVVlVVcxVDVJVk9CZHBjXzE2MzEyNDgwMTA6MTYzMTI1MTYxMF9WNA)
+**In a word，The pointers on sides both are compared and move to the middle until oldCn or newCn traversed completely. When the object is too large will be slowly**
 
-Vue2 的双端比较
+PatchFlag is roughly is divided into two types
 
-简单概括就是，两边指针向中间移动进行比较（详细见[Vue diff 算法](https://bytedance.feishu.cn/docs/doccnK9Zm2M6otPVkghVYt39cIf#)）一直到 oldCh 或 newCh 一个遍历完。在 Vue2 中，虚拟 dom 是一个全量比较的过程，当项目过大的时候就会有 VNode 更新缓慢的问题。
+1. Greater than 0，it's an element that can be optimized and updated during patchVNode or render
+2. Less than 0, the element needs full diff
 
-Vue3 中使用在动态标签末尾加 Patch Flag 去解决这个问题，Patch Flag 大致分为两种：
-
-1. 大于 0，在 patchVNode 或 render 时是可以被优化生成或更新的元素
-2. 小于 0，元素需要 full diff
-
-通过这种方式，对于不参与更新的元素，只会创建一次，渲染的时候直接复用。
+In this way, the element that don't need to update will only be created by once,and directly reused when render
 
 ```html
 <div>Hello World!</div>
@@ -86,89 +77,72 @@ export function render(_ctx, _cache, $props, $setup, $data, $options) {
 ```
 
 ```ts
+// Patch flags can be combined using the | bitwise operator and can be checked using the & operator, e.g.
+// const flag = TEXT | CLASS
+// if (flag & TEXT)
 export const enum PatchFlags {
-  // 动态文字内容
   TEXT = 1,
-  // 动态 class
   CLASS = 1 << 1,
-  // 动态样式
   STYLE = 1 << 2,
-  // 动态 props
   PROPS = 1 << 3,
-  // 有动态的key，也就是说props对象的key不是确定的
   FULL_PROPS = 1 << 4,
-  // 合并事件
   HYDRATE_EVENTS = 1 << 5,
-  // children 顺序确定的 fragment
   STABLE_FRAGMENT = 1 << 6,
-  // children中有带有key的节点的fragment
   KEYED_FRAGMENT = 1 << 7,
-  // 没有key的children的fragment
   UNKEYED_FRAGMENT = 1 << 8,
-  // 只有非props需要patch的，比如`ref`
   NEED_PATCH = 1 << 9,
-  // 动态的插槽
   DYNAMIC_SLOTS = 1 << 10,
-  // 以下是特殊的flag，不会在优化中被用到，是内置的特殊flag
-  // 表示他是静态节点，他的内容永远不会改变，对于hydrate的过程中，不会需要再对其子节点进行diff
+  // Special flags are not used in optimization
   HOISTED = -1,
-  // 用来表示一个节点的diff应该结束
   BAIL = -2,
+}
 ```
 
-1. 很容易进行复合，我们可以通过`TEXT|CLASS`来得到`0000000011`，而这个值可以表示他即有`TEXT`的特性，也有`CLASS`的特性
-2. 方便进行对比，我们拿到一个值`FLAG`的时候，想要判断他有没有`TEXT`特性，只需要`FLAG & TEXT > 0`就行
-3. 方便扩展，在足够位数的情况下，我们新增一种特性就只需要让他左移的位数加一就不会重复
+- Cache of events
 
-> [PatchFlag 原理](https://cloud.tencent.com/developer/article/1654981)
-
-> [Vue3 官方演示 Vdom 网站](https://vue-next-template-explorer.netlify.app)
-
-> [patchFlags 优化](https://vue3.w2deep.com/source-code/runtime/patchFlags.html)
-
-- 事件侦听器缓存
-
-默认情况 onClick 被视为动态绑定，每次都会动态追踪变化，事实上是同一函数，所以直接缓存复用即可。
-
-```vue
+```react
 <button @click="btnClick">SmallStars</button>
-import { openBlock as _openBlock, createElementBlock as _createElementBlock }
-from "vue" export function render(_ctx, _cache, $props, $setup, $data, $options)
-{ return (_openBlock(), _createElementBlock("button", { onClick: _cache[0] ||
-(_cache[0] = (...args) => (_ctx.btnClick && _ctx.btnClick(...args))) },
-"SmallStars")) } // Check the console for the AST
+import { openBlock as _openBlock, createElementBlock as _createElementBlock } from "vue"
+export function render(_ctx, _cache, $props, $setup, $data, $options){
+  return (_openBlock(),
+          _createElementBlock("button",
+                              {onClick: _cache[0] || (_cache[0] = (...args) => (_ctx.btnClick && _ctx.btnClick(...args)))},
+                              "SmallStars")
+         )
+} // Check the console for the AST
 ```
 
-### 按需打包
+### Build of used
 
-Vue3 引入[Tree shaking](https://developer.mozilla.org/zh-CN/docs/Glossary/Tree_shaking)特性，在打包的时候去除掉无用的代码，减少打包的体积，减少程序的执行时间。
+Vue3 introduces the [Tree shaking](https://developer.mozilla.org/zh-CN/docs/Glossary/Tree_shaking) feature, which removes useless code when packing, reduces the volume of the packaging, and reduces the execution time of the program
 
 ### Fragment, Teleport, Suspense
 
 - Fragment
 
-在 Vue2 中，只允许有一个根结点，原因是因为一个 Vue 组件的实例需要绑定到一个 DOM 元素上，在 Vue3 中引入了 Fragment 去解决这个问题，使 template 中可以有多个根元素。并且 Fragment 是一个虚拟元素，他不会在 DOM 中呈现，我们不需要再多创一个 DOM 包裹节点。
+  **Vue2 instance only has only one root node, because it needs to be bound to a DOM element. Fragment label resolved this problem in Vue3, and it doesn't display in DOM**
 
 - Teleport
 
-组件化开发，鼓励我们将功能组件化，将相关的 UI 与交互进行封装并支持引入其他组件，以此形成一颗组件树。但是，有时组件模板的一部分逻辑上属于该组件，而从技术角度来看，最好将模板的这一部分移动到 DOM 中 Vue app 之外的其他位置。比如全屏弹窗
+  **Component Development encourages us build our UIs and actions to into components, these components are combined into a component tree. However, sometimes a part of components' template belong to those components logically, it would be preferable to move this part to somewhere else in DOM, outside of the Vue app. For example, the modal of full-screen.**
 
-```vue
-<body>
-  <noscript>
-    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-  </noscript>
-  <div id="app"></div>
-  //先行定义一个锚点
-  <div id="modal"></div>
-  <!-- built files will be auto injected -->
-</body>
-app.component('modal-button', { template: `
-<button @click="modalOpen = true">
-        Open full screen modal! (With teleport!)
+  ```vue
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    // Add a new anchor point
+    <div id="modal"></div>
+    <!-- built files will be auto injected -->
+  </body>
+
+  app.component( 'modal-button', { template: `
+  <button @click="modalOpen = true">
+      Open full screen modal! (With teleport!)
     </button>
 
-<teleport to="modal">
+  <teleport to="modal">
       <div v-if="modalOpen" class="modal">
         <div>
           <span> Content </span>
@@ -176,68 +150,45 @@ app.component('modal-button', { template: `
         </div>
       </div>
     </teleport>
-`, data() { return { modalOpen: false } } })
-```
+  `, data() { return { modalOpen: false } } })
+  ```
 
 - Suspense
 
-Suspense 只是一个具有插槽的组件，在展示组件完全渲染之前，显示备用内容进行占位。如果是异步组件，Suspense 可以等待组件，并使用 onErrorCaptured 捕获错误
+  **Suspense is a component with slots. Before display content is fully rendered, the alternate content is displayed to occupy the place. If it's a asynchronous component, Suspense will wait for the components and use onErrorCaptured to capture the error**
 
-```vue
-<template>
-  <h1>{{ result }}</h1>
-</template>
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-  setup() {
-    //使用Suspense需要返回一个对象
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        return resolve({
-          result: "10000",
-        });
-      }, 3000);
-    });
-  },
-});
-</script>
-<Suspense>
-  <template #default>
-    <async-show />
+  ```vue
+  <template>
+    <h1>{{ result }}</h1>
   </template>
-  <template #fallback>
-    Loading...
-  </template>
-</Suspense>
-```
+  <script lang="ts">
+  import { defineComponent } from "vue";
+  export default defineComponent({
+    setup() {
+      //Suspense needs to return a Promise
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          return resolve({
+            result: "10000",
+          });
+        }, 3000);
+      });
+    },
+  });
+  </script>
+  <Suspense>
+    <template #default>
+      <async-show />
+    </template>
+    <template #fallback>
+      Loading...
+    </template>
+  </Suspense>
+  ```
 
-### 自定义渲染函数
+### Custom Renderer API
 
-vue 官方实现的 createApp 会给我们的 template 映射生成 html 代码，但是要是你不想渲染生成 html ，而是要渲染生成到 canvas 之类的不是 html 的代码的时候，那就需要用到 Custom Renderer API 来定义自己的 render 渲染生成函数了。
-
-在 vue2 中我们使用 new 的方式去创建一个 Vue 实例
-
-```js
-new Vue({
-  render: (h) => h(App),
-  router,
-  store,
-}).$mount("#app");
-```
-
-Vue3 中我们使用 createApp 去创建并返回一个实例
-
-```js
-const app = createApp(App);
-app.use(router);
-app.use(store);
-app.mount("#app");
-```
-
-https://vue3js.cn/global/createApp.html
-
-https://ssr.vuejs.org/zh/api/#createrenderer
+Our template code will be converted into the html code through [createApp](https://vue3js.cn/global/createApp.html) of Vue. Also you can use this ability to render some other things what you need through Vue's [Custom Renderer API](https://ssr.vuejs.org/zh/api/#createrenderer)
 
 ```ts
 import { createRenderer } from "@vue/runtime-core";
@@ -252,7 +203,6 @@ const renderer = createRenderer({
     return element;
   },
   setElementText(node, text) {
-    // 例(html)
     var textNode = document.createTextNode(text);
     node.appendChild(textNode);
   },
@@ -263,7 +213,6 @@ const renderer = createRenderer({
   /*...*/
 });
 
-// 最后导出 createApp （没错 就是Vue3.0创建根对象那个createApp）
 export function createApp(rootComponent) {
   return renderer.createApp(rootComponent);
 }
@@ -285,35 +234,43 @@ export function createApp(rootComponent) {
 | destroyed     | onDestroyed     |
 | errorCaptured | onErrorCaptured |
 
-## 响应式
+## Responsive
 
 ![img](https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MjA2ODFkMTEwYTIyNDIyZDdjMDVjYWZmOGI5ZjJlOTdfdThPcXMweDJacWtMSXdJaXl5SXZlSGJZS3dIaWNDeW5fVG9rZW46Ym94Y25KSzdrSVhNSFZMT0xaU2ZqNFQwU0plXzE2MzEyNDgwMTA6MTYzMTI1MTYxMF9WNA)
 
-vue3 中的响应式原理简单实现（reactive）
-
 ```js
-// Vue3 响应式原理
-// 工具函数
+// Vue3 Responsive principle
+// utils
 const isObject = (val) => {
   return !!val && typeof val === "object";
 };
 
+const dataLog = (title, arr) => {
+  console.log(title);
+  arr.forEach((i) => {
+    console.log(i);
+  });
+};
+
 /**
- * 13.防止重复代理
- * 1）原对象被多次代理
- * toProxy: {原对象: 代理对象}
- * 2）代理过的对象重复代理
- * toRaw: {代理对象: 原对象}
+ * 13.To prevent the duplication of proxy
+ * toProxy: {Original: Proxy}
+ * toRaw: {Proxy: Original}
  */
+// const info = { a: 1 };
+// const b = reactive(info);
+// reactive(b);
+// reactive(info);
+
 const toProxy = new WeakMap(),
   toRaw = new WeakMap();
 
-// 5.创建一个响应式对象
+// 4.Create responsive Object
 const createReactiveObject = (target) => {
-  // 6.判断 target 是否是一个对象
+  // 5.Judging the target type
   if (!isObject(target)) return target;
 
-  // 14.如果对象已经被代理，或已经是一个代理对象，返回代理对象或本身
+  // 14.If the object has been proxied, return the proxied object
   const proxy = toProxy.get(target);
   if (proxy) return proxy;
   if (toRaw.has(target)) return target;
@@ -321,73 +278,82 @@ const createReactiveObject = (target) => {
   const baseHandle = {
     get: (target, key, receiver) => {
       console.log("get");
-      // 7.使用 Reflect 获取值, Reflect 有返回值
+      // 8.Use Reflect to get the value
       // return target[key]
       const res = Reflect.get(target, key, receiver);
 
-      // 21.依赖收集
-      // 通过当前对象和其关键字收集相应依赖
+      // 21.Collection dependencies
+      // correspond the keys of current object width reactiveEffects
       track(target, key);
 
-      // 9.考虑当前是否仍然是一个的对象（递归调用
+      // 9.consider the case of multi-level object
       return isObject(res) ? reactive(res) : res;
     },
     /**
-     * target: 原对象 ({name: 'smallstars'})
-     * key: 关键字 (name)
-     * value: 新值
-     * receiver: 当前代理对象，可以改变所指向的 this (观察者)
+     * target: original object ({name: 'smallstars'})
+     * key: keyword (name)
+     * value: new value
+     * receiver: current proxied object (observer)
      */
     set: (target, key, value, receiver) => {
       console.log("set");
-      // 这种方式不能确定是否取值成功
+      // This way cannot determine whether the operation is successful
       // target[key] = value;
+      // console.log(target, key, value, receiver);
 
-      // 10.根据 Reflect 的返回值确定相应的操作
+      // 10.Use Reflect to determine the status of operation
       const res = Reflect.set(target, key, value, receiver);
 
-      // 25.判断是否是新增属性
-      // 避免无意义的视图渲染 (eg: array.length)
+      // 25.Determine whether it is a new attribute
       const hadKey = target.hasOwnProperty(key);
+      // Avoid meaningless rendering views (eg: array.length)
+      /*
+        const arr = [1, 2, 3];
+        let proxy = reactive(arr);
+        // it will trigger operation twice. （1.push （2.length
+        proxy.push(4);
+      */
       if (!hadKey) {
-        // 数据变换需要更新视图
+        // data changed, need to rendering views
+        // console.log("rendering");
         trigger(target, "add", key);
       } else {
-        // 已有属性变更, 不需要更新视图
+        // property changed, don't need to rendering views
+        // console.log("no rendering");
         trigger(target, "set", key);
       }
 
-      // 11.返回 res
+      // 11.Return the res
       return res;
     },
-    // 12.通过关键字删除相应属性
+    // 12.Delete the property by key
     deleteProperty: (target, key) => {
       console.log("del");
       return Reflect.deleteProperty(target, key);
     },
   };
-  // 7.对原对象创建一个观察者
-  // 使用 baseHandle(ProxyHandler) 函数去拦截操作
+  // 6.Create the observer of target
+  // Use the baseHandle(ProxyHandler) function to truncate the operation
   let observed = new Proxy(target, baseHandle);
 
-  // 15.标记已经被代理过
+  // 15.Mark the original object has been proxied
   toProxy.set(target, observed);
   toRaw.set(observed, target);
 
-  // 8.返回观察者
+  // 7.Return the observed
   return observed;
 };
 
-// 4.将数据转化成响应式对象
+// 3.Turn data into responsive
 const reactive = (target) => {
   return createReactiveObject(target);
 };
 
-// 依赖收集
-// 缓存响应式 effect
+// collected of dependencies
+// cache responsive effects
 const activeEffectStack = [];
 
-// 如果 target[key] 变换后, 执行相对应的副作用
+// if the target[key] changed, executed the effect
 /*
 targetsMap: {
   [target]: {
@@ -396,25 +362,25 @@ targetsMap: {
 }
 deps: [effects]
 */
-// 22.使用 targetsMap 去收集每个 targets[key] 所对应的依赖的副作用
+// 22.use targetsMap to collect dependencies of per targets[key]
 const targetsMap = new WeakMap();
 const track = (target, key) => {
-  // 23.判断响应式副作用栈中是否有存在副作用
+  // 23.Determine whether the stack is empty
   let effect = activeEffectStack[activeEffectStack.length - 1];
 
-  // 24.是否是第一次，初始化
+  // 24.Determine whether the targetsMap is empty, initialize it
+  // console.log(target, key);
   if (effect) {
     let depsMap = targetsMap.get(target);
     if (!depsMap) targetsMap.set(target, (depsMap = new Map()));
     let deps = depsMap.get(key);
     if (!deps) depsMap.set(key, (deps = new Set()));
 
-    // 在对应的 deps 中加入相应的副作用
     if (!deps.has(effect)) deps.add(effect);
   }
 };
 
-// 26.调用相应的副作用（刷新视图
+// 26.Called the effect to update views
 const trigger = (target, type, key) => {
   const depsMap = targetsMap.get(target);
   if (depsMap) {
@@ -428,52 +394,71 @@ const trigger = (target, type, key) => {
 };
 
 /**
- * 19.使用栈缓存相应的函数
+ * 19.Use stack cache fn(if this effect has other effect, there will be multiple values in the stack)
  * 1).push effect into stack
  * 2).execute fn
  * 3).pop the effect
  */
 const run = (effect, fn) => {
   console.log("run");
-  // 防止函数执行的时候出错终端
+  // prevent errors when fn is executed
   try {
-    // 先将副作用缓存到栈中
-    // 如果在一个副作用中还存在其他副作用, 栈中将会有多个值
     activeEffectStack.push(effect);
+    // 20. execute fn
     fn();
   } finally {
-    // 无论是否执行成功，栈都需要弹出当前执行的函数
     activeEffectStack.pop();
   }
 };
 
-// 18.创建一个响应式的副作用
+// 18.Create responsive effect
 const createReactiveEffect = (fn) => {
   let effect = () => {
-    // 这里将自己传入是为了将自己缓存到栈中
     return run(effect, fn);
   };
   return effect;
 };
 
-// 17.将副作用转为响应式
+// 17.Turn effect into responsive
 const effect = (fn) => {
   let reactiveEffect = createReactiveEffect(fn);
-  // 并会有第一次调用
+  // executed firstly
   reactiveEffect();
   return reactiveEffect;
 };
 
-// 1.定义一个数据 (ref/reactive/computed)
+// let proxy = reactive({ name: "smallstars" });
+// // This effect is executed once when the dependencies are collected, and then called when the subsequent data is updated.
+// effect(() => {
+//   console.log(1);
+// });
+// proxy.name = "blackangel";
+
+// test
+// const info = { name: { firstName: "small", lastName: "stars" } };
+// let proxy = reactive(info);
+
+// // We need to prevent duplication of proxy
+// // use WeakMap to store it
+// reactive(info);
+// reactive(info);
+// // reactive(info);
+
+// const arr = [1, 2, 3];
+// let proxy = reactive(arr);
+// // it will trigger operation twice. 1.push 2.length
+// proxy.push(4);
+
+// 1.Defined the data (ref/reactive/computed)
 const info = reactive({ counter1: 1, counter2: 1 });
 
-// 16.定义数据改变后的副作用
+// 16.Side effects of data changes
 effect(() => {
   console.log("counter1:", info.counter1);
   // console.log("counter2:", info.counter2);
 });
 
-// 2.改变值
+// 2.Change the data value
 setInterval(() => {
   info.counter1++;
 }, 3000);
@@ -481,6 +466,7 @@ setInterval(() => {
 // setInterval(() => {
 //   info.counter2 *= 2;
 // }, 1000);
+
 ```
 
 ## script setup
@@ -494,3 +480,11 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect
 
 https://bytedance.feishu.cn/docs/doccnVB2CKT5JGgZ1o1TmhlCKkc#
+
+## References
+
+> [Usage of bit masks](https://cloud.tencent.com/developer/article/1654981)
+
+> [Vdom](https://vue-next-template-explorer.netlify.app)
+
+> [patchFlags](https://vue3.w2deep.com/source-code/runtime/patchFlags.html)
