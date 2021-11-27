@@ -12,7 +12,7 @@ tags: vue
 ### Performance
 
 - diff Algorithm
-  - Vnodes in Vue2 will be completely compared
+  - VNodes in Vue2 will be completely compared
   - Vue3 adds a static flag(PatchFlat). While comparing, only nodes with static flags are compared, and the specific comparison content can be learned through the flags
 
 ![Vue2 diff]()
@@ -21,7 +21,7 @@ tags: vue
 
 PatchFlag is roughly is divided into two types
 
-1. Greater than 0，it's an element that can be optimized and updated during patchVNode or render
+1. Greater than 0，it's an element that can be optimized and updated during patch VNode or render
 2. Less than 0, the element needs full diff
 
 In this way, the element that don't need to update will only be created by once,and directly reused when render
