@@ -105,13 +105,13 @@ export default {
 <img :src="imgLink"></img>
 
 <!-- binding class -->
-<!-- class: actived title -->
-<div :class="{actived: isActive, 'title': false}">div</div>
+<!-- class: activated title -->
+<div :class="{activated: isActive, 'title': false}">div</div>
 <!-- this 'title' will be parsed  -->
-<div :class="[actived, 'title']">div</div>
-<!-- class: actived title abc-->
-<div :class="[actived, 'title', isAbc ? 'abc' : '']">div</div>
-<div :class="[actived, 'title', {abc: isAbc}]">div</div>
+<div :class="[activated, 'title']">div</div>
+<!-- class: activated title abc-->
+<div :class="[activated, 'title', isAbc ? 'abc' : '']">div</div>
+<div :class="[activated, 'title', {abc: isAbc}]">div</div>
 
 <!-- binding style -->
 <div style="color: red"></div>
@@ -161,8 +161,8 @@ info: {
 .capture: Event listener uses capture mode
 .once: Trigger only once
 .left: Only click the left mouse button to take effect
-.right: Only click the right mouse button to take effct
-.middle: Only click the middle mouse button to take effct
+.right: Only click the right mouse button to take effect
+.middle: Only click the middle mouse button to take effect
 -->
 <button @click.stop="btnClick">btn1</button>
 ```
@@ -205,15 +205,19 @@ info: {
 </ul>
 ```
 
+## Methods
+
+### computed
+
 ## Diff
 
-### Vnode
+### VNode
 
 **The essence of VNode(Virtual Node) is a JavaScript Object**
 
 ```js
-// <div class="title" style="font-size: 30px; color: red;">Vnode</div>
-const vnode = {
+// <div class="title" style="font-size: 30px; color: red;">VNode</div>
+const VNode = {
   type: "div",
   props: {
     class: "title",
@@ -222,7 +226,7 @@ const vnode = {
       color: "red",
     },
   },
-  children: "Vnode",
+  children: "VNode",
 };
 ```
 
@@ -256,7 +260,7 @@ graph TB
 
 #### Unkeyed
 
-**Different letters represent different nodes (The number is added here to facilitate drawing). The nodes are compared in turn, and if they are different, the nodes are updated. Finallym if there are more old nodes than new nodes, the remaining nodes are removed, other wish all of them are added.**
+**Different letters represent different nodes (The number is added here to facilitate drawing). The nodes are compared in turn, and if they are different, the nodes are updated. Finally if there are more old nodes than new nodes, the remaining nodes are removed, other wish all of them are added.**
 
 ```mermaid
 graph TB
@@ -607,7 +611,7 @@ const patchChildren: PatchChildrenFn = (
 ```
 
 ```typescript
-// unked
+// unkey
 const patchUnkeyedChildren = (
   c1: VNode[],
   c2: VNodeArrayChildren,
@@ -682,9 +686,9 @@ const patchUnkeyedChildren = (
 
 #### Diff algorithm optimization
 
-- Vnodes in Vue2 are a full comparison
+- VNodes in Vue2 are a full comparison
 
-  The simple summary is that the pointers on both sides move to the middle for comparison, until one of the traversal of oldCh or newCh is completed. In the Vue2, virtual DOM is a full comparison process. When the object is too large, the update of Vnodes will be slower.
+  The simple summary is that the pointers on both sides move to the middle for comparison, until one of the traversal of oldCh or newCh is completed. In the Vue2, virtual DOM is a full comparison process. When the object is too large, the update of VNodes will be slower.
 
   ![img](https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/vue/vue2-diff-img1.jpg)
 

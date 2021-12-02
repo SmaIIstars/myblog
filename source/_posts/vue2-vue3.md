@@ -218,7 +218,7 @@ export function createApp(rootComponent) {
 }
 ```
 
-### 生命周期的变化
+### The differences of lifecycle
 
 ![img](https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=NmQxZDk0MDU1YWRjMTQ0YmJkNzNhODFkNmM5ZTMzM2RfN2ZQbzlNWU1iaktrQjNGRWpRTE80NmNPd0E3QUdRNnpfVG9rZW46Ym94Y25uZm5qR1lkOHR2a1pKcDRTa0tBZDlnXzE2MzEyNDgwMTA6MTYzMTI1MTYxMF9WNA)
 
@@ -466,7 +466,6 @@ setInterval(() => {
 // setInterval(() => {
 //   info.counter2 *= 2;
 // }, 1000);
-
 ```
 
 ## script setup
