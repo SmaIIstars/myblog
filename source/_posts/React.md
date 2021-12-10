@@ -1644,7 +1644,7 @@ ReactDOM.render(
   });
   export const getHomeMultiDataAction = (dispatch, getState) => {
     axios({
-      url: "http://123.207.32.32:8000/home/MultiData",
+      url: "http://123.45.67.89:8000/home/MultiData",
     }).then((res) => {
       const { data } = res.data;
       // console.log(data);
@@ -1701,7 +1701,7 @@ ReactDOM.render(
     const {
       data: { data },
     } = yield axios({
-      url: "http://123.207.32.32:8000/home/MultiData",
+      url: "http://123.45.67.89:8000/home/MultiData",
     });
     yield all([
       put(changeBannerAction(data.banner.list)),
@@ -2076,7 +2076,7 @@ ReactDOM.render(
   }
   ```
 
-# Extral Knowledge
+# Extra Knowledge
 
 ## Label Template String
 
