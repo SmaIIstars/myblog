@@ -29,7 +29,10 @@ vue create project-name
 
 **This is the complete life cycles of Vuejs, but the life cycle has changed in the setup in Vue3**
 
-<img src="https://vue3js.cn/docs/zh/images/lifecycle.png" alt="Vuejs Lifecycles" style="zoom:40%;" />
+<!-- 无法控制样式 -->
+<!-- ![Lifecycles](https://v3.cn.vuejs.org/images/lifecycle.svg) -->
+
+<img src="https://v3.cn.vuejs.org/images/lifecycle.svg" alt="Vuejs Lifecycles" style="width:100%" />
 
 ## Command
 
