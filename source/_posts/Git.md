@@ -16,7 +16,7 @@ git version
 
 ## Config
 
-**username and email**
+**set the name and email**
 
 ```bash
 git config --global user.name "xxx"
