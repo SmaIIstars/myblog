@@ -9,42 +9,6 @@ tags: Linux
 
 **Here, I will slowly update some knowledge points about Linux**
 
-## Git
-
-### install
-
-```bash
-yum install git
-git version
-```
-
-### Config
-
-**username and email**
-
-```bash
-git config --global user.name "xxx"
-git config --global user.email "xxx@xxx"
-git config --list
-```
-
-**ssh**
-
-```bash
-ssh-keygen -t rsa -C "user.email"
-cd ~/.ssh/
-
-# Configure the corresponding SSH in GitHub according to the content in id_rsa.pua
-
-ssh git@github.com
-```
-
-### References
-
-- [Linux 下使用 Git 教程(一)](https://blog.csdn.net/HcJsJqJSSM/article/details/82941340)
-
-
-
 ## Nohup(no hang up)
 
 **It's used to run commands in the background of system hang up. Exiting the terminal will not affect the running of the program**
