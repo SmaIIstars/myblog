@@ -16,7 +16,7 @@ git version
 
 ## Config
 
-**set the name and email**
+**set the location git config**
 
 ```bash
 git config --global user.name "xxx"
@@ -35,10 +35,22 @@ cd ~/.ssh/
 ssh git@github.com
 ```
 
+## Usage
+
+### Git clear workspace and staging area
+
+```bash
+# 1. before add & commit operation
+git checkout .
+## The above command is invalid for the new operation(file || folder), use clean
+git clean -d
+
+# 2. after add operation
+git reset .
+```
+
 ## References
 
 - [Linux 下使用 Git 教程(一)](https://blog.csdn.net/HcJsJqJSSM/article/details/82941340)
 
-## References
-
-- [「Githug」Git 游戏通关流程](https://www.jianshu.com/p/482b32716bbe)
+- [「Github」Git 游戏通关流程](https://www.jianshu.com/p/482b32716bbe)
