@@ -22,11 +22,11 @@ npm install
 
 /**
  * File Directory Structure
- * ├── _config.yml	:Configuration information for the website
- * ├── package.json	:Dependent files for the project
- * ├── scaffolds		:Template folder
- * ├── source				:A folder to store the resources (Files/folders with names beginning with _ and hidden files
- * |   ├── _posts		 wille be ignored except for '_posts' folder)
+ * ├── _config.yml  :Configuration information for the website
+ * ├── package.json :Dependent files for the project
+ * ├── scaffolds    :Template folder
+ * ├── source       :A folder to store the resources (Files/folders with names beginning with _ and hidden files
+ * |   ├── _posts   :will be ignored except for '_posts' folder)
  * |   └── _drafts
  * └── themes
  */
