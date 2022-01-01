@@ -134,15 +134,16 @@
     <title>Git</title>
     <url>/posts/69c3279c/</url>
     <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install git</span><br><span class="line">git version</span><br></pre></td></tr></table></figure>
-<h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2><p><strong>set the name and email</strong></p>
+<h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2><p><strong>set the location git config</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;xxx&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxx@xxx&quot;</span></span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure>
 <p><strong>ssh</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;user.email&quot;</span></span><br><span class="line"><span class="built_in">cd</span> ~/.ssh/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure the corresponding SSH in GitHub according to the content in id_rsa.pua</span></span><br><span class="line"></span><br><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Git-clear-workspace-and-staging-area"><a href="#Git-clear-workspace-and-staging-area" class="headerlink" title="Git clear workspace and staging area"></a>Git clear workspace and staging area</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. before add &amp; commit operation</span></span><br><span class="line">git checkout .</span><br><span class="line"><span class="comment">## The above command is invalid for the new operation(file || folder), use clean</span></span><br><span class="line">git clean -d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. after add operation</span></span><br><span class="line">git reset .</span><br></pre></td></tr></table></figure>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
-<li><a href="https://blog.csdn.net/HcJsJqJSSM/article/details/82941340">Linux 下使用 Git 教程(一)</a></li>
-</ul>
-<h2 id="References-1"><a href="#References-1" class="headerlink" title="References"></a>References</h2><ul>
-<li><a href="https://www.jianshu.com/p/482b32716bbe">「Githug」Git 游戏通关流程</a></li>
+<li><p><a href="https://blog.csdn.net/HcJsJqJSSM/article/details/82941340">Linux 下使用 Git 教程(一)</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/482b32716bbe">「Github」Git 游戏通关流程</a></p>
+</li>
 </ul>
 ]]></content>
   </entry>
@@ -226,7 +227,7 @@
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">This is [<span class="string">Markdown</span>](<span class="link">https://markdown.com.cn &quot;Official Website&quot;</span>) link</span><br></pre></td></tr></table></figure>
 <p>This is <a href="https://markdown.com.cn." title="Official Website">Markdown</a> link</p>
 <h4 id="URL-amp-Email"><a href="#URL-amp-Email" class="headerlink" title="URL &amp; Email"></a>URL &amp; Email</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml">&lt;https://markdown.com.cn&gt;</span></span><br><span class="line"><span class="xml">&lt;fake@example.com&gt;</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://markdown.com.cn">https://markdown.com.cn</a><br><a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#102;&#97;&#x6b;&#x65;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#109;">&#102;&#97;&#x6b;&#x65;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p><a href="https://markdown.com.cn">https://markdown.com.cn</a><br><a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#102;&#x61;&#107;&#101;&#x40;&#x65;&#120;&#97;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;">&#102;&#x61;&#107;&#101;&#x40;&#x65;&#120;&#97;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;</a></p>
 <h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;!-- show a image --&gt;</span><br><span class="line">![<span class="string">avatar</span>](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)</span><br><span class="line">&lt;!-- show a link image --&gt;</span><br><span class="line">[<span class="string">![avatar</span>](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="Embedded-HTML"><a href="#Embedded-HTML" class="headerlink" title="Embedded HTML"></a>Embedded HTML</h3><p><strong>markdown supports html embedding</strong></p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">This <span class="strong">**word**</span> is bold. This <span class="xml"><span class="tag">&lt;<span class="name">em</span>&gt;</span></span>word<span class="xml"><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span> is italic.</span><br></pre></td></tr></table></figure>
