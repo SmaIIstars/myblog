@@ -14,3 +14,4 @@ tags: Linux
 - [Cron Quartz 定时器调试工具](https://tool.ityuan.com/cron)
 - [Linux crontab 命令](https://www.runoob.com/linux/linux-comm-crontab.html)
 - [cron 表达式的用法](https://www.cnblogs.com/dubhlinn/p/10740838.html)
+- [cron-parser](https://www.npmjs.com/package/cron-parser)

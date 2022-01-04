@@ -22,11 +22,11 @@ npm install
 
 /**
  * File Directory Structure
- * ├── _config.yml	:Configuration information for the website
- * ├── package.json	:Dependent files for the project
- * ├── scaffolds		:Template folder
- * ├── source				:A folder to store the resources (Files/folders with names beginning with _ and hidden files
- * |   ├── _posts		 wille be ignored except for '_posts' folder)
+ * ├── _config.yml  :Configuration information for the website
+ * ├── package.json :Dependent files for the project
+ * ├── scaffolds    :Template folder
+ * ├── source       :A folder to store the resources (Files/folders with names beginning with _ and hidden files
+ * |   ├── _posts   :will be ignored except for '_posts' folder)
  * |   └── _drafts
  * └── themes
  */
@@ -740,6 +740,21 @@ excerpt:
    ```
 
 #### Music
+
+## Issue
+
+- Accessing non-existent property 'xxx' of module exports inside circular dependency.
+  > This problem is caused by stylus version in nib package. We cover the stylus version in packages.json.
+  >
+  > ```json
+  > "resolutions": {
+  >   "stylus": "^0.54.8"
+  > },
+  > ```
+  >
+  > Reference
+  >
+  > - [解决 Hexo 在使用 Node.js 14 时的 Accessing non-existent property 'xxx' of module exports inside circular dependency 问题 ](https://www.haoyizebo.com/posts/710984d0/)
 
 ## Reference
 

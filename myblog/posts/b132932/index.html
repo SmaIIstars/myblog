@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en,zh-CN,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.smallstars.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="HexoMy blog is built using Hexo.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://blog.smallstars.top/posts/b132932/index.html">
+<meta property="og:site_name" content="SmallStars&#39;s blog">
+<meta property="og:description" content="HexoMy blog is built using Hexo.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Hexo-layout1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Hexo-layout2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Next-Schemes-Muse.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Next-Schemes-Mist.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Next-Schemes-Pisces.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Next-Schemes-Gemini.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Sidebar.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/PostCodeblock.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Password.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/PostEnd.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Footer.png">
+<meta property="article:published_time" content="2020-12-22T06:31:25.000Z">
+<meta property="article:modified_time" content="2022-01-02T10:03:23.834Z">
+<meta property="article:author" content="SmallStars">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Hexo-layout1.png">
+
+<link rel="canonical" href="http://blog.smallstars.top/posts/b132932/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hexo | SmallStars's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="SmallStars's blog" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">SmallStars's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">42</span></a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>links</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/SmaIIstars" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://blog.smallstars.top/posts/b132932/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg">
+      <meta itemprop="name" content="SmallStars">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SmallStars's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-22 14:31:25" itemprop="dateCreated datePublished" datetime="2020-12-22T14:31:25+08:00">2020-12-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-02 18:03:23" itemprop="dateModified" datetime="2022-01-02T18:03:23+08:00">2022-01-02</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/posts/b132932/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/b132932/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p><strong>My blog is built using Hexo.</strong></p>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// install the hexo</span></span><br><span class="line">npm install hexo</span><br><span class="line"></span><br><span class="line"><span class="comment">// create the hexo project</span></span><br><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File Directory Structure</span></span><br><span class="line"><span class="comment"> * ├── _config.yml  :Configuration information for the website</span></span><br><span class="line"><span class="comment"> * ├── package.json :Dependent files for the project</span></span><br><span class="line"><span class="comment"> * ├── scaffolds    :Template folder</span></span><br><span class="line"><span class="comment"> * ├── source       :A folder to store the resources (Files/folders with names beginning with _ and hidden files</span></span><br><span class="line"><span class="comment"> * |   ├── _posts   :will be ignored except for &#x27;_posts&#x27; folder)</span></span><br><span class="line"><span class="comment"> * |   └── _drafts</span></span><br><span class="line"><span class="comment"> * └── themes</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h2 id="beautify"><a href="#beautify" class="headerlink" title="beautify"></a>beautify</h2><p><strong>I am going to modularize the entire page and describe the configurations of each section separately</strong></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Hexo-layout1.png" alt="Layout1"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Hexo-layout2.png" alt="Layout2"></p>
+<h3 id="Abbreviation-Agreement"><a href="#Abbreviation-Agreement" class="headerlink" title="Abbreviation Agreement"></a>Abbreviation Agreement</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Abbreviation</th>
+<th style="text-align:center">note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>s_config</em></td>
+<td style="text-align:center">site’s config (/hexo/_config.yml)</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>n_config</em></td>
+<td style="text-align:center">next’s config (/hexo/themes/next/_config.yml)</td>
+</tr>
+<tr>
+<td style="text-align:center">s_source</td>
+<td style="text-align:center">site’s source (/myblog/source)</td>
+</tr>
+<tr>
+<td style="text-align:center">n_layout</td>
+<td style="text-align:center">next’s config (/hexo/themes/next/layout)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="The-overall-style"><a href="#The-overall-style" class="headerlink" title="The overall style"></a>The overall style</h3><h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">reference</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># s_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">modify s_config:</span></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+<h5 id="Schemes"><a href="#Schemes" class="headerlink" title="Schemes"></a>Schemes</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Muse</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Next-Schemes-Muse.png" alt="Muse"></p>
+</li>
+<li><p>Mist</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Next-Schemes-Mist.png" alt="Mist"></p>
+</li>
+<li><p>Pisces</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Next-Schemes-Pisces.png" alt="Pisces"></p>
+</li>
+<li><p>Gemini</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Next-Schemes-Gemini.png" alt="Gemini"></p>
+</li>
+</ul>
+<h5 id="Dark-Mode"><a href="#Dark-Mode" class="headerlink" title="Dark Mode"></a>Dark Mode</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dark Mode</span></span><br><span class="line"><span class="attr">darkmode:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="Basic-Website-Infomation"><a href="#Basic-Website-Infomation" class="headerlink" title="Basic Website Infomation"></a>Basic Website Infomation</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># s_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">SmallStars&#x27;s</span> <span class="string">blog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">SmallStars</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&quot;Asia/Shanghai&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="Custom-Style"><a href="#Custom-Style" class="headerlink" title="Custom Style"></a>Custom Style</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
+<h5 id="Background-Image-and-Cursor"><a href="#Background-Image-and-Cursor" class="headerlink" title="Background Image and Cursor"></a>Background Image and Cursor</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// s_source/_data/styles.styl</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// background image</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: url(xxx.jpg);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-attachment</span>:fixed;</span><br><span class="line">  <span class="attribute">background-position</span>:<span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background-origin</span>: content-box;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">  +mobile()&#123;</span><br><span class="line">    <span class="attribute">background-image</span>: url(xxx.jpg);</span><br><span class="line">    <span class="attribute">background-size</span>: cover;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// cursor</span></span><br><span class="line">  <span class="attribute">cursor</span>: url(xxx.cur), default;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// hover cursor</span></span><br><span class="line"><span class="selector-tag">a</span>:hover&#123;</span><br><span class="line">  <span class="attribute">cursor</span>: url(xxx.cur), default;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="ScrollBar"><a href="#ScrollBar" class="headerlink" title="ScrollBar"></a>ScrollBar</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// s_source/_data/styles.styl</span></span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-thumb &#123;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">  -webkit-<span class="attribute">box-shadow</span>: inset <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.2</span>);</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#535353</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-track &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>   : inset <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.2</span>);</span><br><span class="line">  <span class="attribute">background</span>   : <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="GitHub-banner"><a href="#GitHub-banner" class="headerlink" title="GitHub banner"></a>GitHub banner</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">github_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">permalink:</span> <span class="string">https://github.com/xxx</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Follow</span> <span class="string">me</span> <span class="string">on</span> <span class="string">GitHub</span></span><br></pre></td></tr></table></figure>
+<h3 id="Head"><a href="#Head" class="headerlink" title="Head"></a>Head</h3><h3 id="Sidebar"><a href="#Sidebar" class="headerlink" title="Sidebar"></a>Sidebar</h3><p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Sidebar.png" alt="Sidebar"></p>
+<h4 id="Website-Title"><a href="#Website-Title" class="headerlink" title="Website Title"></a>Website Title</h4><p>Reference the Basic Website Infomation</p>
+<h4 id="Menu-Item"><a href="#Menu-Item" class="headerlink" title="Menu Item"></a>Menu Item</h4><ul>
+<li><p>Item</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="comment">#categories: /categories/ || fa fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Icon and badges</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="User"><a href="#User" class="headerlink" title="User"></a>User</h5><ul>
+<li><p>avatar</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>author: Reference the Basic Website Infomation</p>
+</li>
+</ul>
+<h5 id="site-state"><a href="#site-state" class="headerlink" title="site_state"></a>site_state</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">site_state:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h5 id="social"><a href="#social" class="headerlink" title="social"></a>social</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/SmaIIstars</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mailto:smallstars.he@qq.com</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br><span class="line">  <span class="comment">#Weibo: https://weibo.com/yourname || fab fa-weibo</span></span><br><span class="line">  <span class="comment">#Google: https://plus.google.com/yourname || fab fa-google</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/yourname || fab fa-twitter</span></span><br><span class="line">  <span class="comment">#FB Page: https://www.facebook.com/yourname || fab fa-facebook</span></span><br><span class="line">  <span class="comment">#StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow</span></span><br><span class="line">  <span class="comment">#YouTube: https://youtube.com/yourname || fab fa-youtube</span></span><br><span class="line">  <span class="comment">#Instagram: https://instagram.com/yourname || fab fa-instagram</span></span><br><span class="line">  <span class="comment">#Skype: skype:yourname?call|chat || fab fa-skype</span></span><br><span class="line">  <span class="attr">RSS:</span> <span class="string">/atom.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-rss</span></span><br><span class="line"></span><br><span class="line"><span class="attr">social_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">icons_only:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">transition:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="Back-to-top-button"><a href="#Back-to-top-button" class="headerlink" title="Back to top button"></a>Back to top button</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="Post"><a href="#Post" class="headerlink" title="Post"></a>Post</h3><p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/PostCodeblock.png" alt="PostCodeblock"></p>
+<h4 id="Code-Block"><a href="#Code-Block" class="headerlink" title="Code Block"></a>Code Block</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="attr">highlight_theme:</span> <span class="string">night</span> <span class="string">eighties</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">show_result:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">default</span></span><br></pre></td></tr></table></figure>
+<h4 id="Password"><a href="#Password" class="headerlink" title="Password"></a>Password</h4><p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Password.png" alt="Password"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">// n_layout</span><br><span class="line">// password.swig</span><br><span class="line">&lt;script src=&quot;https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var div = $(&#x27;.post-body&#x27;);</span><br><span class="line">    //var toc=$(&#x27;.post-toc-wrap&#x27;)</span><br><span class="line">    var toc=$(&#x27;.nav&#x27;)</span><br><span class="line">    function password() &#123;</span><br><span class="line">        if(&#x27;&#123;&#123; page.password &#125;&#125;&#x27;)&#123;</span><br><span class="line">            div.remove();</span><br><span class="line">            toc.remove();</span><br><span class="line">            $(&#x27;.post-header&#x27;).after(</span><br><span class="line">            &#x27;&lt;span class=&quot;description&quot; style=&quot;font-weight: bold;border: none;display: block;&#x27;+</span><br><span class="line">            &#x27;width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 40px;resize:none &quot;&gt;&#x27;+</span><br><span class="line">            &#x27;Please Enter your password and press Enter to read&#x27; +</span><br><span class="line">            &#x27;&lt;/span&gt;&#x27; +</span><br><span class="line">            &#x27;&lt;div class=&quot;qiang&quot; style=&quot;height: 100px;width: 60%;margin:0 auto&quot;&gt;&#x27; +</span><br><span class="line">            &#x27;&lt;input class=&quot;password&quot;  type=&quot;password&quot; autocomplete=&quot;new-password&quot; autofocus=&quot;autofocus&quot; value=&quot;&quot; style=&quot;border-radius: 5px; height: 30px; display: block; margin: 0 auto; width: 95%; box-shadow: none; background-color: transparent; border: 1px solid rgba(255,255,255,0.5); color: rgba(255,255,255,0.5); outline: none; text-align: center;&quot;/&gt;&#x27; +</span><br><span class="line">            &#x27;&lt;/div&gt;&#x27;)</span><br><span class="line"></span><br><span class="line">            document.onclick = function (event) &#123;</span><br><span class="line">                var e = event || window.event;</span><br><span class="line">                var elem = e.srcElement || e.target;</span><br><span class="line"></span><br><span class="line">                while (elem) &#123;</span><br><span class="line">                    if (elem != document) &#123;</span><br><span class="line">                        if (elem.className == &quot;password&quot;) &#123;</span><br><span class="line">                            return;</span><br><span class="line">                        &#125;</span><br><span class="line">                        elem = elem.parentNode;</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        return;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            $(document).keyup(function(event)&#123;</span><br><span class="line">                if(event.keyCode ==13&amp;&amp;$(&#x27;.password&#x27;).length&gt;0)&#123;</span><br><span class="line">                    if ($(&#x27;.password&#x27;).val() == &#x27;&#123;&#123; page.password &#125;&#125;&#x27;) &#123;</span><br><span class="line"></span><br><span class="line">                        (div).appendTo($(&quot;.post-header&quot;))</span><br><span class="line"></span><br><span class="line">                        toc.appendTo($(&quot;.post-toc&quot;))</span><br><span class="line">                        var doms =  document.getElementsByClassName(&quot;nav-child&quot;);</span><br><span class="line">                        for(var i = 0; i &lt; doms.length; i++)&#123;</span><br><span class="line">                            doms[i].style.display=&quot;block&quot;;　　</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        $(&quot;.description&quot;).remove();</span><br><span class="line">                        $(&quot;.qiang&quot;).remove();</span><br><span class="line">                        $(&quot;.password&quot;).remove();</span><br><span class="line"></span><br><span class="line">                        $(&quot;.post-block&quot;).css(&#123;opacity:1&#125;);</span><br><span class="line">                        $(&quot;.post-header&quot;).css(&#123;opacity:1&#125;);</span><br><span class="line">                        $(&quot;.post-body&quot;).css(&#123;opacity:1&#125;);</span><br><span class="line">                        $(&quot;.pagination&quot;).css(&#123;opacity:1&#125;);</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        alert(&quot;对不起，密码输入错误。&quot;)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    password();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// n_layout</span><br><span class="line">&lt;main class=&quot;main&quot;&gt;</span><br><span class="line">  ......</span><br><span class="line">  &#123;% include &#x27;password.swig&#x27; %&#125;</span><br><span class="line">&lt;/main&gt;</span><br></pre></td></tr></table></figure>
+<p>Add the password in the beginning of article</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">password: xxx</span><br></pre></td></tr></table></figure>
+<h4 id="PostEnd"><a href="#PostEnd" class="headerlink" title="PostEnd"></a>PostEnd</h4><p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/PostEnd.png" alt="PostEnd"></p>
+<h5 id="The-end-of-the-post"><a href="#The-end-of-the-post" class="headerlink" title="The end of the post"></a>The end of the post</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// themes/next/layout/_macro/passage-end-tag.swig</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">  	&lt;div style=&quot;text-align:center;color: #ccc;font-size:14px;&quot;&gt;</span><br><span class="line">  		-------------The end of this article, thanks for reading-------------</span><br><span class="line">  	&lt;/div&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// themes/next/layout/_macro/post.swig</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">  &#123;% include &#x27;passage-end-tag.swig&#x27; %&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="Donate"><a href="#Donate" class="headerlink" title="Donate"></a>Donate</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">wechatpay:</span> <span class="string">xxx.png</span></span><br><span class="line">  <span class="attr">alipay:</span> <span class="string">xxx.png</span></span><br></pre></td></tr></table></figure>
+<h5 id="End-tag’s-icons"><a href="#End-tag’s-icons" class="headerlink" title="End tag’s icons"></a>End tag’s icons</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tag_icon:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="Footer"><a href="#Footer" class="headerlink" title="Footer"></a>Footer</h3><p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/Footer.png" alt="Footer"></p>
+<h4 id="Icon-between-year-and-copyright-info"><a href="#Icon-between-year-and-copyright-info" class="headerlink" title="Icon between year and copyright info"></a>Icon between year and copyright info</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">icon:</span></span><br><span class="line">	<span class="comment"># The heart icon in the middle</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">fa</span> <span class="string">fa-heart</span></span><br><span class="line">  <span class="attr">animated:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Change the color of icon, using Hex Code.</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#ff0000&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># If not defined, `author` from Hexo `_config.yml` will be used.</span></span><br><span class="line">  <span class="attr">copyright:</span></span><br></pre></td></tr></table></figure>
+<h4 id="Set-the-elapsed-time-of-the-website"><a href="#Set-the-elapsed-time-of-the-website" class="headerlink" title="Set the elapsed time of the website"></a>Set the elapsed time of the website</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- themes/next/layout/_partials/footer.swig --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;timeDate&quot;</span>&gt;</span>Loading the days...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;times&quot;</span>&gt;</span>Loading the time...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">createtime</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> grt = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;12/16/2020 00:00:00&quot;</span>); <span class="comment">// Change the time of your website or site launch</span></span></span><br><span class="line"><span class="javascript">    now.setTime(now.getTime() + <span class="number">250</span>);</span></span><br><span class="line"><span class="javascript">    days = (now - grt) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>;</span></span><br><span class="line"><span class="javascript">    dnum = <span class="built_in">Math</span>.floor(days);</span></span><br><span class="line"><span class="javascript">    hours = (now - grt) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> - <span class="number">24</span> * dnum;</span></span><br><span class="line"><span class="javascript">    hnum = <span class="built_in">Math</span>.floor(hours);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">if</span> (<span class="built_in">String</span>(hnum).length == <span class="number">1</span>) &#123;</span></span><br><span class="line"><span class="javascript">      hnum = <span class="string">&quot;0&quot;</span> + hnum;</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">    minutes = (now - grt) / <span class="number">1000</span> / <span class="number">60</span> - <span class="number">24</span> * <span class="number">60</span> * dnum - <span class="number">60</span> * hnum;</span></span><br><span class="line"><span class="javascript">    mnum = <span class="built_in">Math</span>.floor(minutes);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">if</span> (<span class="built_in">String</span>(mnum).length == <span class="number">1</span>) &#123;</span></span><br><span class="line"><span class="javascript">      mnum = <span class="string">&quot;0&quot;</span> + mnum;</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">    seconds =</span></span><br><span class="line"><span class="javascript">      (now - grt) / <span class="number">1000</span> - <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * dnum - <span class="number">60</span> * <span class="number">60</span> * hnum - <span class="number">60</span> * mnum;</span></span><br><span class="line"><span class="javascript">    snum = <span class="built_in">Math</span>.round(seconds);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">if</span> (<span class="built_in">String</span>(snum).length == <span class="number">1</span>) &#123;</span></span><br><span class="line"><span class="javascript">      snum = <span class="string">&quot;0&quot;</span> + snum;</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">&quot;timeDate&quot;</span>).innerHTML =</span></span><br><span class="line"><span class="javascript">      <span class="string">&quot;The site has been running safely for &quot;</span> + dnum + <span class="string">&quot; days &quot;</span>;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">&quot;times&quot;</span>).innerHTML =</span></span><br><span class="line"><span class="javascript">      hnum + <span class="string">&quot; hours &quot;</span> + mnum + <span class="string">&quot; minutes &quot;</span> + snum + <span class="string">&quot; seconds&quot;</span>;</span></span><br><span class="line"><span class="javascript">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">setInterval</span>(<span class="string">&quot;createtime()&quot;</span>, <span class="number">250</span>);</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="Remove-the-‘Powered-by-Hexo-amp-NexT-Pisces‘"><a href="#Remove-the-‘Powered-by-Hexo-amp-NexT-Pisces‘" class="headerlink" title="Remove the ‘Powered by Hexo &amp; NexT.Pisces‘"></a>Remove the ‘Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> &amp; <a target="_blank" rel="noopener" href="https://pisces.theme-next.org/">NexT.Pisces</a>‘</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Powered by Hexo &amp; NexT</span></span><br><span class="line"><span class="attr">powered:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h4 id="busuanzi-count"><a href="#busuanzi-count" class="headerlink" title="busuanzi_count"></a>busuanzi_count</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure>
+<h3 id="Thrid-Party"><a href="#Thrid-Party" class="headerlink" title="Thrid Party"></a>Thrid Party</h3><h4 id="Small-features"><a href="#Small-features" class="headerlink" title="Small features"></a>Small features</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.</span></span><br><span class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># Vanilla JavaScript plugin for lazyloading images.</span></span><br><span class="line"><span class="attr">lazyload:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="Local-Search"><a href="#Local-Search" class="headerlink" title="Local Search"></a>Local Search</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># s_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<h4 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-filter-mermaid-diagrams</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">mermaid:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">dark</span></span><br></pre></td></tr></table></figure>
+<h4 id="Pace"><a href="#Pace" class="headerlink" title="Pace"></a>Pace</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">pace:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">minimal</span></span><br></pre></td></tr></table></figure>
+<h4 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h4><ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.leancloud.cn/">Register</a></p>
+</li>
+<li><p>Storage ===&gt; Objects</p>
+<p>Create class Comment (no restrictions)</p>
+</li>
+<li><p>Modify the files</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">appid:</span> <span class="comment"># Your leancloud application appid</span></span><br><span class="line">  <span class="attr">appkey:</span> <span class="comment"># Your leancloud application appkey</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># Mail notifier</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># Verification code</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">Just</span> <span class="string">go</span> <span class="string">go</span> <span class="comment"># Comment box placeholder</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># Gravatar style</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail,link</span> <span class="comment"># Custom comment header</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># Pagination size</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">en</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Top"><a href="#Top" class="headerlink" title="Top"></a>Top</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// Change the default plugins</span><br><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//</span> <span class="string">xxx.md</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Hexo</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Markdown</span></span><br><span class="line"><span class="attr">abbrlink:</span> <span class="string">b132932</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2020-12-22 14:31:25</span></span><br><span class="line"><span class="attr">top:</span> <span class="number">11</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// themes/next/layout/_macro/post.swig</span><br><span class="line"></span><br><span class="line">&#123;%- if post.sticky &gt; 0 %&#125; ===&gt; &#123;%- if post.top &gt; 0 %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Abbrlink"><a href="#Abbrlink" class="headerlink" title="Abbrlink"></a>Abbrlink</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># s_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># hexo-abbrlink</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span> <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span> <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<h4 id="Read-More"><a href="#Read-More" class="headerlink" title="Read More"></a>Read More</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-excerpt --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># s_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># hexo-excerpt</span></span><br><span class="line"><span class="attr">excerpt:</span></span><br><span class="line">  <span class="attr">depth:</span> <span class="number">5</span></span><br><span class="line">  <span class="attr">excerpt_excludes:</span> []</span><br><span class="line">  <span class="attr">more_excludes:</span> []</span><br><span class="line">  <span class="attr">hideWholePostExcerpts:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="Chat"><a href="#Chat" class="headerlink" title="Chat"></a>Chat</h4><ol>
+<li><p><a target="_blank" rel="noopener" href="http://dashboard.daovoice.io/get-started?invite_code=3a4f5f60">Register</a></p>
+</li>
+<li><p>Settings =&gt; App Settings =&gt; Install to site</p>
+</li>
+<li><p>Modify the files</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// themes/next/layout/_partials/head/head.swig</span><br><span class="line"></span><br><span class="line">&#123;% if theme.daovoice.enable %&#125;</span><br><span class="line">  &#123;% if theme.daovoice.daovoice_app_id %&#125;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      (function (i, s, o, g, r, a, m) &#123;</span><br><span class="line">        i[&quot;DaoVoiceObject&quot;] = r;</span><br><span class="line">        (i[r] =</span><br><span class="line">          i[r] ||</span><br><span class="line">          function () &#123;</span><br><span class="line">            (i[r].q = i[r].q || []).push(arguments);</span><br><span class="line">          &#125;),</span><br><span class="line">          (i[r].l = 1 * new Date());</span><br><span class="line">        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);</span><br><span class="line">        a.async = 1;</span><br><span class="line">        a.src = g;</span><br><span class="line">        a.charset = &quot;utf-8&quot;;</span><br><span class="line">        m.parentNode.insertBefore(a, m);</span><br><span class="line">      &#125;)(</span><br><span class="line">        window,</span><br><span class="line">        document,</span><br><span class="line">        &quot;script&quot;,</span><br><span class="line">        (&quot;https:&quot; == document.location.protocol ? &quot;https:&quot; : &quot;http:&quot;) +</span><br><span class="line">          &quot;//widget.daovoice.io/widget/&#123;&#123;theme.daovoice.daovoice_app_id&#125;&#125;.js&quot;,</span><br><span class="line">        &quot;daovoice&quot;</span><br><span class="line">      );</span><br><span class="line"></span><br><span class="line">      daovoice(&#x27;init&#x27;, &#123;</span><br><span class="line">        app_id: &quot;&#123;&#123;theme.daovoice.daovoice_app_id&#125;&#125;&quot;</span><br><span class="line">      &#125;);</span><br><span class="line">      daovoice(&#x27;update&#x27;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Online contact</span></span><br><span class="line"><span class="attr">daovoice:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">daovoice_app_id:</span> <span class="string">appId</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Music"><a href="#Music" class="headerlink" title="Music"></a>Music</h4><h2 id="Issue"><a href="#Issue" class="headerlink" title="Issue"></a>Issue</h2><ul>
+<li>Accessing non-existent property ‘xxx’ of module exports inside circular dependency.<blockquote>
+<p>This problem is caused by stylus version in nib package. We cover the stylus version in packages.json.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;resolutions&quot;</span>: &#123;</span><br><span class="line">  <span class="attr">&quot;stylus&quot;</span>: <span class="string">&quot;^0.54.8&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>Reference</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.haoyizebo.com/posts/710984d0/">解决 Hexo 在使用 Node.js 14 时的 Accessing non-existent property ‘xxx’ of module exports inside circular dependency 问题 </a></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo Official website</a></p>
+<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/">Next Official Website</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39345384/article/details/80785373">Hexo 框架下用 NexT(v7.0+)主题美化博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/as480133937/article/details/100138838/">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------The end of this article, thanks for reading-------------</div>
+    
+</div>
+      
+    </div>
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Donation/wechatpay.png" alt="SmallStars WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Donation/alipay.png" alt="SmallStars Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/c24675b4/" rel="prev" title="MySQL">
+      <i class="fa fa-chevron-left"></i> MySQL
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/f70621bd/" rel="next" title="Flask">
+      Flask <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+
+
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">1.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-number">1.1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#beautify"><span class="nav-number">1.2.</span> <span class="nav-text">beautify</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abbreviation-Agreement"><span class="nav-number">1.2.1.</span> <span class="nav-text">Abbreviation Agreement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-overall-style"><span class="nav-number">1.2.2.</span> <span class="nav-text">The overall style</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Theme"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Theme</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Schemes"><span class="nav-number">1.2.2.1.1.</span> <span class="nav-text">Schemes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Dark-Mode"><span class="nav-number">1.2.2.1.2.</span> <span class="nav-text">Dark Mode</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Website-Infomation"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">Basic Website Infomation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Custom-Style"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">Custom Style</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Background-Image-and-Cursor"><span class="nav-number">1.2.2.3.1.</span> <span class="nav-text">Background Image and Cursor</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ScrollBar"><span class="nav-number">1.2.2.3.2.</span> <span class="nav-text">ScrollBar</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GitHub-banner"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">GitHub banner</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Head"><span class="nav-number">1.2.3.</span> <span class="nav-text">Head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sidebar"><span class="nav-number">1.2.4.</span> <span class="nav-text">Sidebar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Website-Title"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">Website Title</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Menu-Item"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">Menu Item</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#User"><span class="nav-number">1.2.4.2.1.</span> <span class="nav-text">User</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#site-state"><span class="nav-number">1.2.4.2.2.</span> <span class="nav-text">site_state</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#social"><span class="nav-number">1.2.4.2.3.</span> <span class="nav-text">social</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Back-to-top-button"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">Back to top button</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Post"><span class="nav-number">1.2.5.</span> <span class="nav-text">Post</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-Block"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">Code Block</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Password"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">Password</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PostEnd"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">PostEnd</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#The-end-of-the-post"><span class="nav-number">1.2.5.3.1.</span> <span class="nav-text">The end of the post</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Donate"><span class="nav-number">1.2.5.3.2.</span> <span class="nav-text">Donate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#End-tag%E2%80%99s-icons"><span class="nav-number">1.2.5.3.3.</span> <span class="nav-text">End tag’s icons</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Footer"><span class="nav-number">1.2.6.</span> <span class="nav-text">Footer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Icon-between-year-and-copyright-info"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">Icon between year and copyright info</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-the-elapsed-time-of-the-website"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">Set the elapsed time of the website</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remove-the-%E2%80%98Powered-by-Hexo-amp-NexT-Pisces%E2%80%98"><span class="nav-number">1.2.6.3.</span> <span class="nav-text">Remove the ‘Powered by Hexo &amp; NexT.Pisces‘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#busuanzi-count"><span class="nav-number">1.2.6.4.</span> <span class="nav-text">busuanzi_count</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thrid-Party"><span class="nav-number">1.2.7.</span> <span class="nav-text">Thrid Party</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Small-features"><span class="nav-number">1.2.7.1.</span> <span class="nav-text">Small features</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Local-Search"><span class="nav-number">1.2.7.2.</span> <span class="nav-text">Local Search</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mermaid"><span class="nav-number">1.2.7.3.</span> <span class="nav-text">Mermaid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pace"><span class="nav-number">1.2.7.4.</span> <span class="nav-text">Pace</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Comment"><span class="nav-number">1.2.7.5.</span> <span class="nav-text">Comment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Top"><span class="nav-number">1.2.7.6.</span> <span class="nav-text">Top</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Abbrlink"><span class="nav-number">1.2.7.7.</span> <span class="nav-text">Abbrlink</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Read-More"><span class="nav-number">1.2.7.8.</span> <span class="nav-text">Read More</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Chat"><span class="nav-number">1.2.7.9.</span> <span class="nav-text">Chat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Music"><span class="nav-number">1.2.7.10.</span> <span class="nav-text">Music</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Issue"><span class="nav-number">1.3.</span> <span class="nav-text">Issue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SmallStars"
+      src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg">
+  <p class="site-author-name" itemprop="name">SmallStars</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SmaIIstars" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SmaIIstars" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:smallstars.he@qq.com" title="E-Mail → mailto:smallstars.he@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss-square fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/SmallStars56" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;SmallStars56" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+      <script src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    //暂时储存文章中的内容
+    var div = $('.post-body');
+    //暂时储存目录的内容
+    //var toc=$('.post-toc-wrap')
+    var toc=$('.nav')
+    function password() {
+        if(''){
+            //将文章内容删除
+            div.remove();
+            //将目录删除
+            toc.remove();
+            //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
+            //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
+            //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
+            $('.post-header').after(
+            '<span class="description" style="font-weight: bold;border: none;display: block;'+
+            'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 40px;resize:none ">'+
+            'Please Enter your password and press Enter to read' +
+            '</span>' +
+            '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
+            '<input class="password"  type="password" autocomplete="new-password" autofocus="autofocus" value="" style="border-radius: 5px; height: 30px; display: block; margin: 0 auto; width: 95%; box-shadow: none; background-color: transparent; border: 1px solid rgba(255,255,255,0.5); color: rgba(255,255,255,0.5); outline: none; text-align: center;"/>' +
+            '</div>')
+
+            //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
+            document.onclick = function (event) {
+                var e = event || window.event;
+                var elem = e.srcElement || e.target;
+
+                while (elem) {
+                    if (elem != document) {
+                        if (elem.className == "password") {
+                            //$(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
+                            return;
+                        }
+                        elem = elem.parentNode;
+                    } else {
+                        //$(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
+                        return;
+                    }
+                }
+            }
+            //绑定enter键按下后离开的事件
+            $(document).keyup(function(event){
+                if(event.keyCode ==13&&$('.password').length>0){
+                    //console.log($('.password').val())
+                    //console.log('')
+                    if ($('.password').val() == '') {
+                        //恢复文章内容
+                        (div).appendTo($(".post-header"))
+                        //恢复目录
+                        toc.appendTo($(".post-toc"))
+                        var doms =  document.getElementsByClassName("nav-child");
+                        for(var i = 0; i < doms.length; i++){
+                            doms[i].style.display="block";　　
+                        }
+
+                        //删除本页面的输入密码组件
+                        $(".description").remove();
+                        $(".qiang").remove();
+                        $(".password").remove();
+
+                        //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
+                        //图片懒加载，没有加入此功能的这个函数需要去掉
+                        //$('img').lazyload({
+                        //    placeholder: '/images/loading.gif',
+                        //    effect: 'fadeIn',
+                        //    threshold : 100,
+                        //    failure_limit : 20,
+                        //    skip_invisible : false
+                        //});
+                        //pjax后出现文章不显示，没有pjax的下面四行需要去掉
+                        $(".post-block").css({opacity:1});
+                        $(".post-header").css({opacity:1});
+                        $(".post-body").css({opacity:1});
+                        $(".pagination").css({opacity:1});
+                    }else {
+                        alert("Sorry, password is wrong!")
+                    }
+                }
+                //将document的keyup移除，防止在pjax的情况下会重复绑定事件
+            });
+        }
+    }
+    password();
+</script>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a href="https://beian.miit.gov.cn/" target="_blank" style="color:black; border-bottom:none">蜀ICP备2021015460</a></span>
+</div>
+
+<span id="timeDate">Loading the days...</span>
+<span id="times">Loading the time...</span>
+<script>
+  var now = new Date();
+  function createtime() {
+      var grt= new Date("12/16/2020 00:00:00"); // Change the time of your website or site launch
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+      document.getElementById("timeDate").innerHTML = "The site has been running safely for "+dnum+" days ";
+      document.getElementById("times").innerHTML = hnum + " hours " + mnum + " minutes " + snum + " seconds";
+  }
+  setInterval("createtime()",250);
+</script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'dark',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'nAob86xrJuPEaaOoArHK9y1H-gzGzoHsz',
+      appKey     : 'mRlnwozcSnYGRdjzmPFKJfzO',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'en' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
