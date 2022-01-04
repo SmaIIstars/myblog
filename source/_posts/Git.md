@@ -14,7 +14,7 @@ yum install git
 git version
 ```
 
-## Config
+## git-ssh Config
 
 **set the location git config**
 
@@ -32,6 +32,7 @@ cd ~/.ssh/
 
 # Configure the corresponding SSH in GitHub according to the content in id_rsa.pua
 
+# Test
 ssh git@github.com
 ```
 

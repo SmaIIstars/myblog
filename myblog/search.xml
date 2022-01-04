@@ -10,6 +10,23 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Git</title>
+    <url>/posts/69c3279c/</url>
+    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install git</span><br><span class="line">git version</span><br></pre></td></tr></table></figure>
+<h2 id="git-ssh-Config"><a href="#git-ssh-Config" class="headerlink" title="git-ssh Config"></a>git-ssh Config</h2><p><strong>set the location git config</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;xxx&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxx@xxx&quot;</span></span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<p><strong>ssh</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;user.email&quot;</span></span><br><span class="line"><span class="built_in">cd</span> ~/.ssh/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure the corresponding SSH in GitHub according to the content in id_rsa.pua</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Test</span></span><br><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Git-clear-workspace-and-staging-area"><a href="#Git-clear-workspace-and-staging-area" class="headerlink" title="Git clear workspace and staging area"></a>Git clear workspace and staging area</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. before add &amp; commit operation</span></span><br><span class="line">git checkout .</span><br><span class="line"><span class="comment">## The above command is invalid for the new operation(file || folder), use clean</span></span><br><span class="line">git clean -d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. after add operation</span></span><br><span class="line">git reset .</span><br></pre></td></tr></table></figure>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><p><a href="https://blog.csdn.net/HcJsJqJSSM/article/details/82941340">Linux 下使用 Git 教程(一)</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/482b32716bbe">「Github」Git 游戏通关流程</a></p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>vue2-vue3</title>
     <url>/posts/9359b45b/</url>
     <content><![CDATA[<h1 id="Vue3-optimization"><a href="#Vue3-optimization" class="headerlink" title="Vue3 optimization"></a>Vue3 optimization</h1><h2 id="Differences-of-Vue2-and-Vue3"><a href="#Differences-of-Vue2-and-Vue3" class="headerlink" title="Differences of Vue2 and Vue3"></a>Differences of Vue2 and Vue3</h2><h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><ul>
@@ -334,23 +351,6 @@
       <tags>
         <tag>Hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Git</title>
-    <url>/posts/69c3279c/</url>
-    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install git</span><br><span class="line">git version</span><br></pre></td></tr></table></figure>
-<h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2><p><strong>set the location git config</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;xxx&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxx@xxx&quot;</span></span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure>
-<p><strong>ssh</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;user.email&quot;</span></span><br><span class="line"><span class="built_in">cd</span> ~/.ssh/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure the corresponding SSH in GitHub according to the content in id_rsa.pua</span></span><br><span class="line"></span><br><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Git-clear-workspace-and-staging-area"><a href="#Git-clear-workspace-and-staging-area" class="headerlink" title="Git clear workspace and staging area"></a>Git clear workspace and staging area</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. before add &amp; commit operation</span></span><br><span class="line">git checkout .</span><br><span class="line"><span class="comment">## The above command is invalid for the new operation(file || folder), use clean</span></span><br><span class="line">git clean -d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. after add operation</span></span><br><span class="line">git reset .</span><br></pre></td></tr></table></figure>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
-<li><p><a href="https://blog.csdn.net/HcJsJqJSSM/article/details/82941340">Linux 下使用 Git 教程(一)</a></p>
-</li>
-<li><p><a href="https://www.jianshu.com/p/482b32716bbe">「Github」Git 游戏通关流程</a></p>
-</li>
-</ul>
-]]></content>
   </entry>
   <entry>
     <title>Cron</title>
@@ -699,7 +699,7 @@
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">This is [<span class="string">Markdown</span>](<span class="link">https://markdown.com.cn &quot;Official Website&quot;</span>) link</span><br></pre></td></tr></table></figure>
 <p>This is <a href="https://markdown.com.cn." title="Official Website">Markdown</a> link</p>
 <h4 id="URL-amp-Email"><a href="#URL-amp-Email" class="headerlink" title="URL &amp; Email"></a>URL &amp; Email</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml">&lt;https://markdown.com.cn&gt;</span></span><br><span class="line"><span class="xml">&lt;fake@example.com&gt;</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://markdown.com.cn">https://markdown.com.cn</a><br><a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#102;&#x61;&#x6b;&#x65;&#64;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#102;&#x61;&#x6b;&#x65;&#64;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p><a href="https://markdown.com.cn">https://markdown.com.cn</a><br><a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#102;&#x61;&#x6b;&#x65;&#64;&#x65;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#102;&#x61;&#x6b;&#x65;&#64;&#x65;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;!-- show a image --&gt;</span><br><span class="line">![<span class="string">avatar</span>](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)</span><br><span class="line">&lt;!-- show a link image --&gt;</span><br><span class="line">[<span class="string">![avatar</span>](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="Embedded-HTML"><a href="#Embedded-HTML" class="headerlink" title="Embedded HTML"></a>Embedded HTML</h3><p><strong>markdown supports html embedding</strong></p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">This <span class="strong">**word**</span> is bold. This <span class="xml"><span class="tag">&lt;<span class="name">em</span>&gt;</span></span>word<span class="xml"><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span> is italic.</span><br></pre></td></tr></table></figure>
@@ -1088,6 +1088,20 @@ s ->> c: data or error</pre>
       </tags>
   </entry>
   <entry>
+    <title>Mustache</title>
+    <url>/posts/b1f95fde/</url>
+    <content><![CDATA[<h1 id="Mustache"><a href="#Mustache" class="headerlink" title="Mustache"></a><a href="https://github.com/janl/mustache.js/">Mustache</a></h1><p><strong>mustache.js is a zero-dependency implementation of the mustache template system in JavaScript. Mustache is a logic-less template syntax. It can be used for HTML, config files, source code - anything. It works by expanding tags in a template using values provided in a hash or object.</strong></p>
+<h2 id="Useage-in-Vue"><a href="#Useage-in-Vue" class="headerlink" title="Useage in Vue"></a>Useage in Vue</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;!-- mustache --&gt;</span><br><span class="line">    &lt;!-- 1. Basic usage --&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123; message &#125;&#125;&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 2. expression --&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123; counter * 10 &#125;&#125;&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 3. function --&gt;</span><br><span class="line">    &lt;h2&gt;</span><br><span class="line">      &#123;&#123; getReverseMessage() &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;App&quot;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      message: &quot;Small Stars&quot;,</span><br><span class="line">      counter: 100,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    getReverseMessage() &#123;</span><br><span class="line">      return this.message.split(&quot; &quot;).reverse().join(&quot; &quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="https://mustache.github.io/mustache.5.html">Official Document</a></li>
+<li><a href="https://www.jianshu.com/p/7f1cecdc27e1">学习笔记《Mustache》</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Mustache</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Set maximum number of connections in MySQL</title>
     <url>/posts/9d45af52/</url>
     <content><![CDATA[<h1 id="Set-maximum-number-of-connections-in-MySQL"><a href="#Set-maximum-number-of-connections-in-MySQL" class="headerlink" title="Set maximum number of connections in MySQL"></a>Set maximum number of connections in MySQL</h1><p><strong>MySQL sets maximum number of connections during installation, but sometimes we need to modify the value to meet our need.</strong></p>
@@ -1106,20 +1120,6 @@ s ->> c: data or error</pre>
 ]]></content>
       <tags>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mustache</title>
-    <url>/posts/b1f95fde/</url>
-    <content><![CDATA[<h1 id="Mustache"><a href="#Mustache" class="headerlink" title="Mustache"></a><a href="https://github.com/janl/mustache.js/">Mustache</a></h1><p><strong>mustache.js is a zero-dependency implementation of the mustache template system in JavaScript. Mustache is a logic-less template syntax. It can be used for HTML, config files, source code - anything. It works by expanding tags in a template using values provided in a hash or object.</strong></p>
-<h2 id="Useage-in-Vue"><a href="#Useage-in-Vue" class="headerlink" title="Useage in Vue"></a>Useage in Vue</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;!-- mustache --&gt;</span><br><span class="line">    &lt;!-- 1. Basic usage --&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123; message &#125;&#125;&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 2. expression --&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123; counter * 10 &#125;&#125;&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 3. function --&gt;</span><br><span class="line">    &lt;h2&gt;</span><br><span class="line">      &#123;&#123; getReverseMessage() &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;App&quot;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      message: &quot;Small Stars&quot;,</span><br><span class="line">      counter: 100,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    getReverseMessage() &#123;</span><br><span class="line">      return this.message.split(&quot; &quot;).reverse().join(&quot; &quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
-<li><a href="https://mustache.github.io/mustache.5.html">Official Document</a></li>
-<li><a href="https://www.jianshu.com/p/7f1cecdc27e1">学习笔记《Mustache》</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Mustache</tag>
       </tags>
   </entry>
   <entry>
@@ -1163,39 +1163,6 @@ s ->> c: data or error</pre>
       <tags>
         <tag>MySQL</tag>
         <tag>Navicat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nginx</title>
-    <url>/posts/65b69107/</url>
-    <content><![CDATA[<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p><a href="http://nginx.org/en/download.html">Download Nginx</a></p>
-<h2 id="Start-Nginx"><a href="#Start-Nginx" class="headerlink" title="Start Nginx"></a>Start Nginx</h2><ol>
-<li>Double-click to start nginx.exe, and the command box flashes past</li>
-<li>Enter the command nginx.exe or start nginx</li>
-</ol>
-<h2 id="Reload-Nginx"><a href="#Reload-Nginx" class="headerlink" title="Reload Nginx"></a>Reload Nginx</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">nginx</span> -s reload</span><br></pre></td></tr></table></figure>
-<h2 id="Stop-Nginx"><a href="#Stop-Nginx" class="headerlink" title="Stop Nginx"></a>Stop Nginx</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Out of service</span></span><br><span class="line"><span class="attribute">nginx</span> -s quit</span><br><span class="line"></span><br><span class="line"><span class="comment"># Forced shutdown of service</span></span><br><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
-<h2 id="Domain-name-binding"><a href="#Domain-name-binding" class="headerlink" title="Domain name binding"></a>Domain name binding</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">server_name</span> www.itblood.com; <span class="comment">#Domain name</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Forwarding-service"><a href="#Forwarding-service" class="headerlink" title="Forwarding service"></a>Forwarding service</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">  <span class="attribute">proxy_pass</span>  http://127.0.0.1:8080; <span class="comment"># Forwarding address</span></span><br><span class="line">  <span class="attribute">proxy_set_header</span> Host $proxy_host;</span><br><span class="line">  <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">  <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Setup-Nginx-starts-from-startup"><a href="#Setup-Nginx-starts-from-startup" class="headerlink" title="Setup Nginx starts from startup"></a>Setup Nginx starts from startup</h2><p>Convert the Nginx to the system service</p>
-<ol>
-<li><p><a href="https://github.com/kohsuke/winsw">Download the ‘Windows Service Wrapper’</a></p>
-</li>
-<li><p>Place the program in the directory of Nginx and rename ‘nginx-service.exe’.</p>
-</li>
-<li><p>Create configuration file ‘nginx-service.xml’</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">description</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">logpath</span>&gt;</span>D:\xxx\nginx-x.x.x<span class="tag">&lt;/<span class="name">logpath</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">logmode</span>&gt;</span>roll<span class="tag">&lt;/<span class="name">logmode</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">depend</span>&gt;</span><span class="tag">&lt;/<span class="name">depend</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">executable</span>&gt;</span>D:\xxx\nginx-x.x.x\nginx.exe<span class="tag">&lt;/<span class="name">executable</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">stopexecutable</span>&gt;</span>D:\xxx\nginx-x.x.x\nginx.exe -s stop<span class="tag">&lt;/<span class="name">stopexecutable</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Execute ‘nginx-service.exe install’ in the CMD in the curent directory</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Nginx/StructureTree.png" alt="Structure Tree"></p>
-</li>
-<li><p>The Service item is set to start</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Nginx/ServiceManagement.png" alt=""></p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Nginx</tag>
       </tags>
   </entry>
   <entry>
@@ -1245,6 +1212,39 @@ s ->> c: data or error</pre>
 ]]></content>
       <tags>
         <tag>POST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx</title>
+    <url>/posts/65b69107/</url>
+    <content><![CDATA[<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p><a href="http://nginx.org/en/download.html">Download Nginx</a></p>
+<h2 id="Start-Nginx"><a href="#Start-Nginx" class="headerlink" title="Start Nginx"></a>Start Nginx</h2><ol>
+<li>Double-click to start nginx.exe, and the command box flashes past</li>
+<li>Enter the command nginx.exe or start nginx</li>
+</ol>
+<h2 id="Reload-Nginx"><a href="#Reload-Nginx" class="headerlink" title="Reload Nginx"></a>Reload Nginx</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">nginx</span> -s reload</span><br></pre></td></tr></table></figure>
+<h2 id="Stop-Nginx"><a href="#Stop-Nginx" class="headerlink" title="Stop Nginx"></a>Stop Nginx</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Out of service</span></span><br><span class="line"><span class="attribute">nginx</span> -s quit</span><br><span class="line"></span><br><span class="line"><span class="comment"># Forced shutdown of service</span></span><br><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
+<h2 id="Domain-name-binding"><a href="#Domain-name-binding" class="headerlink" title="Domain name binding"></a>Domain name binding</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">server_name</span> www.itblood.com; <span class="comment">#Domain name</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Forwarding-service"><a href="#Forwarding-service" class="headerlink" title="Forwarding service"></a>Forwarding service</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">  <span class="attribute">proxy_pass</span>  http://127.0.0.1:8080; <span class="comment"># Forwarding address</span></span><br><span class="line">  <span class="attribute">proxy_set_header</span> Host $proxy_host;</span><br><span class="line">  <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">  <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Setup-Nginx-starts-from-startup"><a href="#Setup-Nginx-starts-from-startup" class="headerlink" title="Setup Nginx starts from startup"></a>Setup Nginx starts from startup</h2><p>Convert the Nginx to the system service</p>
+<ol>
+<li><p><a href="https://github.com/kohsuke/winsw">Download the ‘Windows Service Wrapper’</a></p>
+</li>
+<li><p>Place the program in the directory of Nginx and rename ‘nginx-service.exe’.</p>
+</li>
+<li><p>Create configuration file ‘nginx-service.xml’</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">description</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">logpath</span>&gt;</span>D:\xxx\nginx-x.x.x<span class="tag">&lt;/<span class="name">logpath</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">logmode</span>&gt;</span>roll<span class="tag">&lt;/<span class="name">logmode</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">depend</span>&gt;</span><span class="tag">&lt;/<span class="name">depend</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">executable</span>&gt;</span>D:\xxx\nginx-x.x.x\nginx.exe<span class="tag">&lt;/<span class="name">executable</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">stopexecutable</span>&gt;</span>D:\xxx\nginx-x.x.x\nginx.exe -s stop<span class="tag">&lt;/<span class="name">stopexecutable</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Execute ‘nginx-service.exe install’ in the CMD in the curent directory</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Nginx/StructureTree.png" alt="Structure Tree"></p>
+</li>
+<li><p>The Service item is set to start</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Nginx/ServiceManagement.png" alt=""></p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Nginx</tag>
       </tags>
   </entry>
   <entry>
@@ -2234,6 +2234,18 @@ max(next[k])+1, &(1 \lt k \lt j \ and \ p_1...p_k = p_{j-k+1}...p_{j-1})
       </tags>
   </entry>
   <entry>
+    <title>Emoji</title>
+    <url>/posts/778ad936/</url>
+    <content><![CDATA[<h1 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h1><p><strong>Emoji is a visual symbol used in wireless communication in Japan. Image refers to pictures, while text refers to characters, which can be used to represent a variety of expression, such as smiley faces representing laughter and cakes representing food.</strong></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://emojixd.com/">EmojiXD</a></p>
+<p><a href="http://emojihomepage.com/">Emoji Homepage</a></p>
+<p><a href="https://blog.csdn.net/lw250397846/article/details/112651038">github 提交消息的emoji表情符号规范</a></p>
+]]></content>
+      <tags>
+        <tag>Emoji</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>EventLoop</title>
     <url>/posts/df38ec5a/</url>
     <content><![CDATA[<h1 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h1><p><strong>The JS monitor process determines the order in which different event are executed. This is the Event Loop</strong></p>
@@ -2321,18 +2333,6 @@ max(next[k])+1, &(1 \lt k \lt j \ and \ p_1...p_k = p_{j-k+1}...p_{j-1})
 <h3 id="Case-3"><a href="#Case-3" class="headerlink" title="Case 3"></a>Case 3</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> event3 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">async1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">    <span class="keyword">await</span> async2();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">async2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;4&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;5&quot;</span>);</span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  async1();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">reslove</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;6&quot;</span>);</span><br><span class="line">    reslove();</span><br><span class="line">  &#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;7&quot;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;8&quot;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Return of await as a then()</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">await async2();</span></span><br><span class="line"><span class="comment">console.log(&quot;2&quot;);</span></span><br><span class="line"><span class="comment">is same as</span></span><br><span class="line"><span class="comment">new Promise((resolve) =&gt; &#123;</span></span><br><span class="line"><span class="comment">      console.log(&quot;3&quot;);</span></span><br><span class="line"><span class="comment">      resolve(&quot;2&quot;);</span></span><br><span class="line"><span class="comment">    &#125;).then((res) =&gt; &#123;</span></span><br><span class="line"><span class="comment">      console.log(res);</span></span><br><span class="line"><span class="comment">    &#125;);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 4 1 3 6 8 2 7 5</span></span><br><span class="line">event3()</span><br></pre></td></tr></table></figure>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.jianshu.com/p/e06e86ef2595">js运行机制详解（Event Loop）</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Emoji</title>
-    <url>/posts/778ad936/</url>
-    <content><![CDATA[<h1 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h1><p><strong>Emoji is a visual symbol used in wireless communication in Japan. Image refers to pictures, while text refers to characters, which can be used to represent a variety of expression, such as smiley faces representing laughter and cakes representing food.</strong></p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://emojixd.com/">EmojiXD</a></p>
-<p><a href="http://emojihomepage.com/">Emoji Homepage</a></p>
-<p><a href="https://blog.csdn.net/lw250397846/article/details/112651038">github 提交消息的emoji表情符号规范</a></p>
-]]></content>
-      <tags>
-        <tag>Emoji</tag>
-      </tags>
   </entry>
   <entry>
     <title>Flask-RESTful</title>
