@@ -693,6 +693,6 @@ const patchUnkeyedChildren = (
 
   The simple summary is that the pointers on both sides move to the middle for comparison, until one of the traversal of oldCh or newCh is completed. In the Vue2, virtual DOM is a full comparison process. When the object is too large, the update of VNodes will be slower.
 
-  ![img](https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/vue/vue2-diff-img1.jpg)
+  ![vue2-diff-img1](https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Vue/vue2-diff-img1.png)
 
 - Vue3 added a static flag (PatchFlag). During the comparison, only nodes with static flags are compared, and the specific comparison content can be learned through the flags.

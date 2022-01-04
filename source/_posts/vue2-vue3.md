@@ -220,7 +220,7 @@ export function createApp(rootComponent) {
 
 ### The differences of lifecycle
 
-![img](https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=NmQxZDk0MDU1YWRjMTQ0YmJkNzNhODFkNmM5ZTMzM2RfN2ZQbzlNWU1iaktrQjNGRWpRTE80NmNPd0E3QUdRNnpfVG9rZW46Ym94Y25uZm5qR1lkOHR2a1pKcDRTa0tBZDlnXzE2MzEyNDgwMTA6MTYzMTI1MTYxMF9WNA)
+![vue3-lifecycle](https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Vue/vue3-lifecycle.png)
 
 | Vue2          | Vue3            |
 | ------------- | --------------- |
@@ -236,7 +236,7 @@ export function createApp(rootComponent) {
 
 ## Responsive
 
-![img](https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MjA2ODFkMTEwYTIyNDIyZDdjMDVjYWZmOGI5ZjJlOTdfdThPcXMweDJacWtMSXdJaXl5SXZlSGJZS3dIaWNDeW5fVG9rZW46Ym94Y25KSzdrSVhNSFZMT0xaU2ZqNFQwU0plXzE2MzEyNDgwMTA6MTYzMTI1MTYxMF9WNA)
+![vue3-responsive](https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Vue/vue3-responsive.png)
 
 ```js
 // Vue3 Responsive principle
@@ -477,8 +477,6 @@ https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy
 
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect
-
-https://bytedance.feishu.cn/docs/doccnVB2CKT5JGgZ1o1TmhlCKkc#
 
 ## References
 
