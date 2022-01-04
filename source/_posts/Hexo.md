@@ -741,6 +741,21 @@ excerpt:
 
 #### Music
 
+## Issue
+
+- Accessing non-existent property 'xxx' of module exports inside circular dependency.
+  > This problem is caused by stylus version in nib package. We cover the stylus version in packages.json.
+  >
+  > ```json
+  > "resolutions": {
+  >   "stylus": "^0.54.8"
+  > },
+  > ```
+  >
+  > Reference
+  >
+  > - [解决 Hexo 在使用 Node.js 14 时的 Accessing non-existent property 'xxx' of module exports inside circular dependency 问题 ](https://www.haoyizebo.com/posts/710984d0/)
+
 ## Reference
 
 [Hexo Official website](https://hexo.io/zh-cn/)

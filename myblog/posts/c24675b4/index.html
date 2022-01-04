@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -276,13 +276,13 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop mysql</span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Login MySQL without password and set the new password</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">&#x2F;&#x2F; Don&#39;t need to enter the password</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">// Don&#x27;t need to enter the password</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Change the password (In the higher version, the password filed is changed to authentication_string)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># lower version</span><br><span class="line">update mysql.user set password&#x3D;&#39;123&#39; where user&#x3D;&#39;root&#39;;</span><br><span class="line">-- higher version</span><br><span class="line">update mysql.user set authentication_string&#x3D;&#39;123&#39; where user&#x3D;&#39;root&#39;;</span><br><span class="line">&#x2F;*password -&gt; authentication_string*&#x2F;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># lower version</span><br><span class="line">update mysql.user set password=&#x27;123&#x27; where user=&#x27;root&#x27;;</span><br><span class="line">-- higher version</span><br><span class="line">update mysql.user set authentication_string=&#x27;123&#x27; where user=&#x27;root&#x27;;</span><br><span class="line">/*password -&gt; authentication_string*/</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Refresh the database</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Delete the ‘skip-grant-tables’</p>
 </li>
