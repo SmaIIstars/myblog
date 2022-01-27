@@ -12,8 +12,84 @@
   <entry>
     <title>Cron</title>
     <url>/posts/b7ffafc6/</url>
-    <content><![CDATA[<h1 id="Cron"><a href="#Cron" class="headerlink" title="Cron"></a>Cron</h1><p><strong>Cron is a timed excution tool under linux, which can run jobs without manual intervention.</strong></p>
-<iframe  
+    <content><![CDATA[<h1 id="Cron"><a href="#Cron" class="headerlink" title="Cron"></a>Cron</h1><p><strong>Cron is a timed execution tool under Unix-like, which can run jobs without manual intervention.</strong></p>
+<h2 id="Format"><a href="#Format" class="headerlink" title="Format"></a>Format</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Required</th>
+<th style="text-align:left">Range</th>
+<th style="text-align:left">Special Character</th>
+<th style="text-align:left">Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Second</td>
+<td style="text-align:left">True</td>
+<td style="text-align:left">0-59</td>
+<td style="text-align:left"><code>*</code> <code>,</code> <code>-</code></td>
+<td style="text-align:left">The Standard implementation does not support this field</td>
+</tr>
+<tr>
+<td style="text-align:left">Minute</td>
+<td style="text-align:left">True</td>
+<td style="text-align:left">0-59</td>
+<td style="text-align:left"><code>*</code> <code>,</code> <code>-</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Hours</td>
+<td style="text-align:left">True</td>
+<td style="text-align:left">0-23</td>
+<td style="text-align:left"><code>*</code> <code>,</code> <code>-</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Day of month</td>
+<td style="text-align:left">True</td>
+<td style="text-align:left">1-31</td>
+<td style="text-align:left"><code>*</code> <code>,</code> <code>-</code> <code>?</code> <code>L</code> <code>W</code></td>
+<td style="text-align:left"><code>?</code> <code>L</code> <code>W</code> Only some software implements</td>
+</tr>
+<tr>
+<td style="text-align:left">Month</td>
+<td style="text-align:left">True</td>
+<td style="text-align:left">1-12</td>
+<td style="text-align:left"><code>*</code> <code>,</code> <code>-</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Day of week</td>
+<td style="text-align:left">True</td>
+<td style="text-align:left">0-7</td>
+<td style="text-align:left"><code>*</code> <code>,</code> <code>-</code> <code>?</code> <code>L</code> <code>#</code></td>
+<td style="text-align:left"><code>?</code> <code>L</code> <code>#</code> Only some software implements<br/>(Linux and Spring value range are 0-7)<br/>(Quartz value range is 1-7, 1 is Sunday)</td>
+</tr>
+<tr>
+<td style="text-align:left">Year</td>
+<td style="text-align:left">False</td>
+<td style="text-align:left">1970-2099</td>
+<td style="text-align:left"><code>*</code> <code>,</code> <code>-</code></td>
+<td style="text-align:left">The Standard implementation does not support this field</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<h3 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h3><ul>
+<li><code>*</code> means all values.</li>
+<li><code>,</code> means partition.</li>
+<li><code>-</code> indicates closed interval continuous.</li>
+<li><code>L</code> is the ‘Last’. When used in ‘Day of week’ field, it’s possible to specify a structure for month, such as “Last Friday”(5L). In the ‘Month’ field, you can specify the last day of current month.</li>
+<li><code>W</code> is ‘Day of month’, it can specify the working day closest to the target date, but it cannot span the current month. (Eg. ‘15W’: targetDate = 15th === Saturday ? 14th : 15th === Sunday &amp;&amp; 16th)</li>
+<li><code>#</code> is used in ‘Day of week’ field and must be followed by a number between 1 and 5. For example, 5#3 means the third Friday every month. </li>
+<li><code>?</code>  means blank or will be replaced by the time of process started.</li>
+</ul>
+</blockquote>
+<h2 id="Custom-Cron-Expression-Web-Site"><a href="#Custom-Cron-Expression-Web-Site" class="headerlink" title="Custom Cron Expression Web Site"></a>Custom Cron Expression Web Site</h2><h3 id="Supported-Format"><a href="#Supported-Format" class="headerlink" title="Supported Format"></a>Supported Format</h3><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line">*    *    *    *    *    *</span><br><span class="line">┬    ┬    ┬    ┬    ┬    ┬</span><br><span class="line">│    │    │    │    │    |</span><br><span class="line">│    │    │    │    │    └ day of week (<span class="number">0</span> - <span class="number">7</span>, <span class="number">1</span>L - <span class="number">7</span>L) (<span class="number">0</span> <span class="keyword">or</span> <span class="number">7</span> is Sun)</span><br><span class="line">│    │    │    │    └───── month (<span class="number">1</span> - <span class="number">12</span>)</span><br><span class="line">│    │    │    └────────── day of month (<span class="number">1</span> - <span class="number">31</span>, L)</span><br><span class="line">│    │    └─────────────── hour (<span class="number">0</span> - <span class="number">23</span>)</span><br><span class="line">│    └──────────────────── minute (<span class="number">0</span> - <span class="number">59</span>)</span><br><span class="line">└───────────────────────── second (<span class="number">0</span> - <span class="number">59</span>, optional)</span><br></pre></td></tr></table></figure>
+<h3 id="Cron-Expression-Web-Site"><a href="#Cron-Expression-Web-Site" class="headerlink" title="Cron Expression Web Site"></a>Cron Expression Web Site</h3><iframe  
  height=850 
  width=90% 
  src="http://cron.smallstars.top/cron-expression"  
@@ -25,6 +101,7 @@
 <li><a href="https://www.runoob.com/linux/linux-comm-crontab.html">Linux crontab 命令</a></li>
 <li><a href="https://www.cnblogs.com/dubhlinn/p/10740838.html">cron 表达式的用法</a></li>
 <li><a href="https://www.npmjs.com/package/cron-parser">cron-parser</a></li>
+<li><a href="http://cron.smallstars.top/cron-expression">Cron Expression</a></li>
 </ul>
 ]]></content>
       <tags>
@@ -706,7 +783,7 @@
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">This is [<span class="string">Markdown</span>](<span class="link">https://markdown.com.cn &quot;Official Website&quot;</span>) link</span><br></pre></td></tr></table></figure>
 <p>This is <a href="https://markdown.com.cn." title="Official Website">Markdown</a> link</p>
 <h4 id="URL-amp-Email"><a href="#URL-amp-Email" class="headerlink" title="URL &amp; Email"></a>URL &amp; Email</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml">&lt;https://markdown.com.cn&gt;</span></span><br><span class="line"><span class="xml">&lt;fake@example.com&gt;</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://markdown.com.cn">https://markdown.com.cn</a><br><a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#102;&#x61;&#107;&#101;&#64;&#x65;&#x78;&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#102;&#x61;&#107;&#101;&#64;&#x65;&#x78;&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p><a href="https://markdown.com.cn">https://markdown.com.cn</a><br><a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x66;&#x61;&#107;&#x65;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#x2e;&#99;&#x6f;&#x6d;">&#x66;&#x61;&#107;&#x65;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 <h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;!-- show a image --&gt;</span><br><span class="line">![<span class="string">avatar</span>](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)</span><br><span class="line">&lt;!-- show a link image --&gt;</span><br><span class="line">[<span class="string">![avatar</span>](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="Embedded-HTML"><a href="#Embedded-HTML" class="headerlink" title="Embedded HTML"></a>Embedded HTML</h3><p><strong>markdown supports html embedding</strong></p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">This <span class="strong">**word**</span> is bold. This <span class="xml"><span class="tag">&lt;<span class="name">em</span>&gt;</span></span>word<span class="xml"><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span> is italic.</span><br></pre></td></tr></table></figure>
@@ -926,6 +1003,60 @@
       </tags>
   </entry>
   <entry>
+    <title>Token-JWT</title>
+    <url>/posts/815fd892/</url>
+    <content><![CDATA[<h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h1><h2 id="The-principle-of-Token"><a href="#The-principle-of-Token" class="headerlink" title="The principle of Token"></a>The principle of Token</h2><pre class="mermaid">sequenceDiagram
+participant c as Client
+participant s as Server
+
+c ->> s: Username & password
+s ->> s: generate the token
+s ->> c: token
+c ->> s: network request with token
+s ->> s: valid token
+s ->> c: data or error</pre>
+
+<ul>
+<li>Tokens can be stateless and can be shared across multiple services</li>
+<li>Make request without sending cookie to prevent CSRF attacks</li>
+</ul>
+<h1 id="JWT-Json-Web-Token"><a href="#JWT-Json-Web-Token" class="headerlink" title="JWT (Json Web Token)"></a>JWT (Json Web Token)</h1><h2 id="Differences-between-traditional-Token-and-JWT"><a href="#Differences-between-traditional-Token-and-JWT" class="headerlink" title="Differences between traditional Token and JWT"></a>Differences between traditional Token and JWT</h2><ul>
+<li>Traditional Token: The generated token on server needs to be stored locally on the server side, and subsequent requests need to be queried and checked to verify the validity of the token.</li>
+<li>JWT: The generated token does not need to be stored on the server</li>
+</ul>
+<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><ul>
+<li><p>Token as a whole is made up of three major parts that is divided by ‘.’</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9</span><br><span class="line">  .eyJkYXRhIjp7Im5hbWUiOiJTbWFsbFN0YXJzIiwiYXV0aG9yaXR5IjoiMCJ9LCJleHAiOjE2MTExNTAxNzB9</span><br><span class="line">  .ypNwF -</span><br><span class="line">  BgqEl4HmuS -</span><br><span class="line">  ulJRgKjz -</span><br><span class="line">  RZJIMxtHv28K5cPm8;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Header (Contains algorihm, types, etc. Use base64url encryption)</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;alg&quot;</span>: <span class="string">&quot;HS256&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;typ&quot;</span>: <span class="string">&quot;JWT&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Payload (data. Use base64url encryption)</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;data&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;SmallStars&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;authority&quot;</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;exp&quot;</span>: <span class="number">1611150170</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Signature (Connect the first two parts of the ciphertext. Use HS256 encryption, and then the obtained ciphertext with base64url encryption)</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// salt is your secret-key</span></span><br><span class="line"><span class="comment">// base64url is base64 encrypted first and then &#x27;-&#x27; instead of &#x27;+&#x27; and &#x27;_&#x27; instead of &#x27;/&#x27;</span></span><br><span class="line">base64url(</span><br><span class="line">  HMACHSHA256(base64UrlEncode(header) + <span class="string">&quot;.&quot;</span> + base64url(payload), salt)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Sample-Code"><a href="#Sample-Code" class="headerlink" title="Sample Code"></a>Sample Code</h2><ul>
+<li><p>Generate Token</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_token</span>(<span class="params">payload, timeout=<span class="number">1</span></span>):</span></span><br><span class="line">    <span class="keyword">import</span> jwt</span><br><span class="line">    <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line">    <span class="comment"># header</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;typ&#x27;</span>: <span class="string">&#x27;jwt&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;alg&#x27;</span>: <span class="string">&#x27;HS256&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    payload[<span class="string">&#x27;exp&#x27;</span>] = datetime.datetime.utcnow() + datetime.timedelta(minutes=timeout)</span><br><span class="line">    <span class="built_in">print</span>(payload)</span><br><span class="line"></span><br><span class="line">    token = jwt.encode(payload=payload, key=salt, headers=headers)</span><br><span class="line">    <span class="keyword">return</span> token</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Valid Token</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">valid_token</span>(<span class="params">request</span>):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        token = request.form[<span class="string">&#x27;token&#x27;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> BaseException:</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">&#x27;code&#x27;</span>: <span class="number">1003</span>,</span><br><span class="line">            <span class="string">&#x27;error&#x27;</span>: <span class="string">&#x27;Please login in&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">import</span> jwt</span><br><span class="line">    payload = <span class="literal">None</span></span><br><span class="line">    error_msg = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        payload = jwt.decode(token, salt, <span class="string">&#x27;HS256&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> jwt.ExpiredSignatureError:</span><br><span class="line">        error_msg = <span class="string">&#x27;Token is timeout&#x27;</span></span><br><span class="line">    <span class="keyword">except</span> jwt.DecodeError:</span><br><span class="line">        error_msg = <span class="string">&#x27;Token validation failed&#x27;</span></span><br><span class="line">    <span class="keyword">except</span> jwt.InvalidTokenError:</span><br><span class="line">        error_msg = <span class="string">&#x27;Token is invalid&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> payload:</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">&#x27;code&#x27;</span>: <span class="number">1003</span>,</span><br><span class="line">            <span class="string">&#x27;error&#x27;</span>: error_msg</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="string">&#x27;code&#x27;</span>: <span class="number">1002</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://jwt.io/">Official Website</a></p>
+<p><a href="https://www.cnblogs.com/ls-2018/p/11858551.html">Reference blog</a></p>
+<p><a href="https://www.bilibili.com/video/BV1tJ411B7yJ?p=2">Reference video</a></p>
+<p><a href="https://github.com/SmaIIstars/STA">STA BackEnd Project</a></p>
+]]></content>
+      <tags>
+        <tag>Token</tag>
+        <tag>JWT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>UnblockNeteaseMusic</title>
     <url>/posts/306a286d/</url>
     <content><![CDATA[<h1 id="UnblockNeteaseMusic"><a href="#UnblockNeteaseMusic" class="headerlink" title="UnblockNeteaseMusic"></a>UnblockNeteaseMusic</h1><p><strong>Unlock netease Cloud Music client greying songs.</strong></p>
@@ -1032,60 +1163,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Token-JWT</title>
-    <url>/posts/815fd892/</url>
-    <content><![CDATA[<h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h1><h2 id="The-principle-of-Token"><a href="#The-principle-of-Token" class="headerlink" title="The principle of Token"></a>The principle of Token</h2><pre class="mermaid">sequenceDiagram
-participant c as Client
-participant s as Server
-
-c ->> s: Username & password
-s ->> s: generate the token
-s ->> c: token
-c ->> s: network request with token
-s ->> s: valid token
-s ->> c: data or error</pre>
-
-<ul>
-<li>Tokens can be stateless and can be shared across multiple services</li>
-<li>Make request without sending cookie to prevent CSRF attacks</li>
-</ul>
-<h1 id="JWT-Json-Web-Token"><a href="#JWT-Json-Web-Token" class="headerlink" title="JWT (Json Web Token)"></a>JWT (Json Web Token)</h1><h2 id="Differences-between-traditional-Token-and-JWT"><a href="#Differences-between-traditional-Token-and-JWT" class="headerlink" title="Differences between traditional Token and JWT"></a>Differences between traditional Token and JWT</h2><ul>
-<li>Traditional Token: The generated token on server needs to be stored locally on the server side, and subsequent requests need to be queried and checked to verify the validity of the token.</li>
-<li>JWT: The generated token does not need to be stored on the server</li>
-</ul>
-<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><ul>
-<li><p>Token as a whole is made up of three major parts that is divided by ‘.’</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9</span><br><span class="line">  .eyJkYXRhIjp7Im5hbWUiOiJTbWFsbFN0YXJzIiwiYXV0aG9yaXR5IjoiMCJ9LCJleHAiOjE2MTExNTAxNzB9</span><br><span class="line">  .ypNwF -</span><br><span class="line">  BgqEl4HmuS -</span><br><span class="line">  ulJRgKjz -</span><br><span class="line">  RZJIMxtHv28K5cPm8;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Header (Contains algorihm, types, etc. Use base64url encryption)</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;alg&quot;</span>: <span class="string">&quot;HS256&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;typ&quot;</span>: <span class="string">&quot;JWT&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Payload (data. Use base64url encryption)</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;data&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;SmallStars&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;authority&quot;</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;exp&quot;</span>: <span class="number">1611150170</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Signature (Connect the first two parts of the ciphertext. Use HS256 encryption, and then the obtained ciphertext with base64url encryption)</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// salt is your secret-key</span></span><br><span class="line"><span class="comment">// base64url is base64 encrypted first and then &#x27;-&#x27; instead of &#x27;+&#x27; and &#x27;_&#x27; instead of &#x27;/&#x27;</span></span><br><span class="line">base64url(</span><br><span class="line">  HMACHSHA256(base64UrlEncode(header) + <span class="string">&quot;.&quot;</span> + base64url(payload), salt)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Sample-Code"><a href="#Sample-Code" class="headerlink" title="Sample Code"></a>Sample Code</h2><ul>
-<li><p>Generate Token</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_token</span>(<span class="params">payload, timeout=<span class="number">1</span></span>):</span></span><br><span class="line">    <span class="keyword">import</span> jwt</span><br><span class="line">    <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line">    <span class="comment"># header</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;typ&#x27;</span>: <span class="string">&#x27;jwt&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;alg&#x27;</span>: <span class="string">&#x27;HS256&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    payload[<span class="string">&#x27;exp&#x27;</span>] = datetime.datetime.utcnow() + datetime.timedelta(minutes=timeout)</span><br><span class="line">    <span class="built_in">print</span>(payload)</span><br><span class="line"></span><br><span class="line">    token = jwt.encode(payload=payload, key=salt, headers=headers)</span><br><span class="line">    <span class="keyword">return</span> token</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Valid Token</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">valid_token</span>(<span class="params">request</span>):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        token = request.form[<span class="string">&#x27;token&#x27;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> BaseException:</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">&#x27;code&#x27;</span>: <span class="number">1003</span>,</span><br><span class="line">            <span class="string">&#x27;error&#x27;</span>: <span class="string">&#x27;Please login in&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">import</span> jwt</span><br><span class="line">    payload = <span class="literal">None</span></span><br><span class="line">    error_msg = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        payload = jwt.decode(token, salt, <span class="string">&#x27;HS256&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> jwt.ExpiredSignatureError:</span><br><span class="line">        error_msg = <span class="string">&#x27;Token is timeout&#x27;</span></span><br><span class="line">    <span class="keyword">except</span> jwt.DecodeError:</span><br><span class="line">        error_msg = <span class="string">&#x27;Token validation failed&#x27;</span></span><br><span class="line">    <span class="keyword">except</span> jwt.InvalidTokenError:</span><br><span class="line">        error_msg = <span class="string">&#x27;Token is invalid&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> payload:</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">&#x27;code&#x27;</span>: <span class="number">1003</span>,</span><br><span class="line">            <span class="string">&#x27;error&#x27;</span>: error_msg</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="string">&#x27;code&#x27;</span>: <span class="number">1002</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://jwt.io/">Official Website</a></p>
-<p><a href="https://www.cnblogs.com/ls-2018/p/11858551.html">Reference blog</a></p>
-<p><a href="https://www.bilibili.com/video/BV1tJ411B7yJ?p=2">Reference video</a></p>
-<p><a href="https://github.com/SmaIIstars/STA">STA BackEnd Project</a></p>
-]]></content>
-      <tags>
-        <tag>Token</tag>
-        <tag>JWT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Location and History in JS</title>
     <url>/posts/c01132fd/</url>
     <content><![CDATA[<h1 id="Location-and-History-in-JavaScript"><a href="#Location-and-History-in-JavaScript" class="headerlink" title="Location and History in JavaScript"></a>Location and History in JavaScript</h1><h2 id="Location"><a href="#Location" class="headerlink" title="Location"></a>Location</h2><h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://segmentfault.com/a/1190000009384087">JS中最容易被轻视的对象——location和history</a></p>
@@ -1130,6 +1207,39 @@ s ->> c: data or error</pre>
       </tags>
   </entry>
   <entry>
+    <title>Nginx</title>
+    <url>/posts/65b69107/</url>
+    <content><![CDATA[<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p><a href="http://nginx.org/en/download.html">Download Nginx</a></p>
+<h2 id="Start-Nginx"><a href="#Start-Nginx" class="headerlink" title="Start Nginx"></a>Start Nginx</h2><ol>
+<li>Double-click to start nginx.exe, and the command box flashes past</li>
+<li>Enter the command nginx.exe or start nginx</li>
+</ol>
+<h2 id="Reload-Nginx"><a href="#Reload-Nginx" class="headerlink" title="Reload Nginx"></a>Reload Nginx</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">nginx</span> -s reload</span><br></pre></td></tr></table></figure>
+<h2 id="Stop-Nginx"><a href="#Stop-Nginx" class="headerlink" title="Stop Nginx"></a>Stop Nginx</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Out of service</span></span><br><span class="line"><span class="attribute">nginx</span> -s quit</span><br><span class="line"></span><br><span class="line"><span class="comment"># Forced shutdown of service</span></span><br><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
+<h2 id="Domain-name-binding"><a href="#Domain-name-binding" class="headerlink" title="Domain name binding"></a>Domain name binding</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">server_name</span> www.itblood.com; <span class="comment">#Domain name</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Forwarding-service"><a href="#Forwarding-service" class="headerlink" title="Forwarding service"></a>Forwarding service</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">  <span class="attribute">proxy_pass</span>  http://127.0.0.1:8080; <span class="comment"># Forwarding address</span></span><br><span class="line">  <span class="attribute">proxy_set_header</span> Host $proxy_host;</span><br><span class="line">  <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">  <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Setup-Nginx-starts-from-startup"><a href="#Setup-Nginx-starts-from-startup" class="headerlink" title="Setup Nginx starts from startup"></a>Setup Nginx starts from startup</h2><p>Convert the Nginx to the system service</p>
+<ol>
+<li><p><a href="https://github.com/kohsuke/winsw">Download the ‘Windows Service Wrapper’</a></p>
+</li>
+<li><p>Place the program in the directory of Nginx and rename ‘nginx-service.exe’.</p>
+</li>
+<li><p>Create configuration file ‘nginx-service.xml’</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">description</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">logpath</span>&gt;</span>D:\xxx\nginx-x.x.x<span class="tag">&lt;/<span class="name">logpath</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">logmode</span>&gt;</span>roll<span class="tag">&lt;/<span class="name">logmode</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">depend</span>&gt;</span><span class="tag">&lt;/<span class="name">depend</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">executable</span>&gt;</span>D:\xxx\nginx-x.x.x\nginx.exe<span class="tag">&lt;/<span class="name">executable</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">stopexecutable</span>&gt;</span>D:\xxx\nginx-x.x.x\nginx.exe -s stop<span class="tag">&lt;/<span class="name">stopexecutable</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Execute ‘nginx-service.exe install’ in the CMD in the curent directory</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Nginx/StructureTree.png" alt="Structure Tree"></p>
+</li>
+<li><p>The Service item is set to start</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Nginx/ServiceManagement.png" alt=""></p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Nginx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL</title>
     <url>/posts/c24675b4/</url>
     <content><![CDATA[<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p><a href="https://blog.csdn.net/weixin_38239039/article/details/79629984">reference</a></p>
@@ -1170,39 +1280,6 @@ s ->> c: data or error</pre>
       <tags>
         <tag>MySQL</tag>
         <tag>Navicat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nginx</title>
-    <url>/posts/65b69107/</url>
-    <content><![CDATA[<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p><a href="http://nginx.org/en/download.html">Download Nginx</a></p>
-<h2 id="Start-Nginx"><a href="#Start-Nginx" class="headerlink" title="Start Nginx"></a>Start Nginx</h2><ol>
-<li>Double-click to start nginx.exe, and the command box flashes past</li>
-<li>Enter the command nginx.exe or start nginx</li>
-</ol>
-<h2 id="Reload-Nginx"><a href="#Reload-Nginx" class="headerlink" title="Reload Nginx"></a>Reload Nginx</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">nginx</span> -s reload</span><br></pre></td></tr></table></figure>
-<h2 id="Stop-Nginx"><a href="#Stop-Nginx" class="headerlink" title="Stop Nginx"></a>Stop Nginx</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Out of service</span></span><br><span class="line"><span class="attribute">nginx</span> -s quit</span><br><span class="line"></span><br><span class="line"><span class="comment"># Forced shutdown of service</span></span><br><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
-<h2 id="Domain-name-binding"><a href="#Domain-name-binding" class="headerlink" title="Domain name binding"></a>Domain name binding</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">server_name</span> www.itblood.com; <span class="comment">#Domain name</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Forwarding-service"><a href="#Forwarding-service" class="headerlink" title="Forwarding service"></a>Forwarding service</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">  <span class="attribute">proxy_pass</span>  http://127.0.0.1:8080; <span class="comment"># Forwarding address</span></span><br><span class="line">  <span class="attribute">proxy_set_header</span> Host $proxy_host;</span><br><span class="line">  <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">  <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Setup-Nginx-starts-from-startup"><a href="#Setup-Nginx-starts-from-startup" class="headerlink" title="Setup Nginx starts from startup"></a>Setup Nginx starts from startup</h2><p>Convert the Nginx to the system service</p>
-<ol>
-<li><p><a href="https://github.com/kohsuke/winsw">Download the ‘Windows Service Wrapper’</a></p>
-</li>
-<li><p>Place the program in the directory of Nginx and rename ‘nginx-service.exe’.</p>
-</li>
-<li><p>Create configuration file ‘nginx-service.xml’</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">description</span>&gt;</span>nginx<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">logpath</span>&gt;</span>D:\xxx\nginx-x.x.x<span class="tag">&lt;/<span class="name">logpath</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">logmode</span>&gt;</span>roll<span class="tag">&lt;/<span class="name">logmode</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">depend</span>&gt;</span><span class="tag">&lt;/<span class="name">depend</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">executable</span>&gt;</span>D:\xxx\nginx-x.x.x\nginx.exe<span class="tag">&lt;/<span class="name">executable</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">stopexecutable</span>&gt;</span>D:\xxx\nginx-x.x.x\nginx.exe -s stop<span class="tag">&lt;/<span class="name">stopexecutable</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Execute ‘nginx-service.exe install’ in the CMD in the curent directory</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Nginx/StructureTree.png" alt="Structure Tree"></p>
-</li>
-<li><p>The Service item is set to start</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/Nginx/ServiceManagement.png" alt=""></p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Nginx</tag>
       </tags>
   </entry>
   <entry>
@@ -2120,6 +2197,19 @@ max(next[k])+1, &(1 \lt k \lt j \ and \ p_1...p_k = p_{j-k+1}...p_{j-1})
       </tags>
   </entry>
   <entry>
+    <title>ImmutableJS</title>
+    <url>/posts/54620a1a/</url>
+    <content><![CDATA[<h1 id="ImmutableJS"><a href="#ImmutableJS" class="headerlink" title="ImmutableJS"></a>ImmutableJS</h1><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">yarn add immutable-js</span><br><span class="line">npm install immutable-js</span><br></pre></td></tr></table></figure>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://github.com/immutable-js/immutable-js">GitHub</a></p>
+<p><a href="https://www.jianshu.com/p/0fa8c7456c15">Immutable.js 了解一下？</a></p>
+<p><a href="https://blog.csdn.net/wlchn/article/details/78206331">ImmutableJS Map</a></p>
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>ImmutableJS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Event Flow in HTML</title>
     <url>/posts/7c75da10/</url>
     <content><![CDATA[<h1 id="Event-Flow-in-HTML"><a href="#Event-Flow-in-HTML" class="headerlink" title="Event Flow in HTML"></a>Event Flow in HTML</h1><p><strong>An event is a specific moment of interaction that occurs in a document or brower window and act as a bridge between JavaScript and DOM. Event Flow describes the order in which events are received from the page.</strong></p>
@@ -2194,21 +2284,8 @@ max(next[k])+1, &(1 \lt k \lt j \ and \ p_1...p_k = p_{j-k+1}...p_{j-1})
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/Events">Event Type</a></p>
 ]]></content>
       <tags>
+        <tag>JavaScript</tag>
         <tag>HTML</tag>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ImmutableJS</title>
-    <url>/posts/54620a1a/</url>
-    <content><![CDATA[<h1 id="ImmutableJS"><a href="#ImmutableJS" class="headerlink" title="ImmutableJS"></a>ImmutableJS</h1><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">yarn add immutable-js</span><br><span class="line">npm install immutable-js</span><br></pre></td></tr></table></figure>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://github.com/immutable-js/immutable-js">GitHub</a></p>
-<p><a href="https://www.jianshu.com/p/0fa8c7456c15">Immutable.js 了解一下？</a></p>
-<p><a href="https://blog.csdn.net/wlchn/article/details/78206331">ImmutableJS Map</a></p>
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>ImmutableJS</tag>
       </tags>
   </entry>
   <entry>
@@ -2238,6 +2315,18 @@ max(next[k])+1, &(1 \lt k \lt j \ and \ p_1...p_k = p_{j-k+1}...p_{j-1})
 ]]></content>
       <tags>
         <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Emoji</title>
+    <url>/posts/778ad936/</url>
+    <content><![CDATA[<h1 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h1><p><strong>Emoji is a visual symbol used in wireless communication in Japan. Image refers to pictures, while text refers to characters, which can be used to represent a variety of expression, such as smiley faces representing laughter and cakes representing food.</strong></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://emojixd.com/">EmojiXD</a></p>
+<p><a href="http://emojihomepage.com/">Emoji Homepage</a></p>
+<p><a href="https://blog.csdn.net/lw250397846/article/details/112651038">github 提交消息的emoji表情符号规范</a></p>
+]]></content>
+      <tags>
+        <tag>Emoji</tag>
       </tags>
   </entry>
   <entry>
@@ -2394,18 +2483,6 @@ max(next[k])+1, &(1 \lt k \lt j \ and \ p_1...p_k = p_{j-k+1}...p_{j-1})
         <tag>Flask-RESTful</tag>
         <tag>Python</tag>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Emoji</title>
-    <url>/posts/778ad936/</url>
-    <content><![CDATA[<h1 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h1><p><strong>Emoji is a visual symbol used in wireless communication in Japan. Image refers to pictures, while text refers to characters, which can be used to represent a variety of expression, such as smiley faces representing laughter and cakes representing food.</strong></p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://emojixd.com/">EmojiXD</a></p>
-<p><a href="http://emojihomepage.com/">Emoji Homepage</a></p>
-<p><a href="https://blog.csdn.net/lw250397846/article/details/112651038">github 提交消息的emoji表情符号规范</a></p>
-]]></content>
-      <tags>
-        <tag>Emoji</tag>
       </tags>
   </entry>
   <entry>
