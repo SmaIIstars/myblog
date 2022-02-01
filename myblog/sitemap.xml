@@ -476,13 +476,6 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Algorithm/</loc>
-    <lastmod>2022-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.smallstars.top/tags/cron/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -490,14 +483,14 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Docsify/</loc>
+    <loc>http://blog.smallstars.top/tags/Algorithm/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Emoji/</loc>
+    <loc>http://blog.smallstars.top/tags/Docsify/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -533,6 +526,13 @@
   
   <url>
     <loc>http://blog.smallstars.top/tags/Flask-SQLalchemy/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.smallstars.top/tags/Emoji/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -581,14 +581,14 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Mustache/</loc>
+    <loc>http://blog.smallstars.top/tags/Navicat/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Navicat/</loc>
+    <loc>http://blog.smallstars.top/tags/Mustache/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -623,13 +623,6 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Welfare/</loc>
-    <lastmod>2022-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.smallstars.top/tags/Vue/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -645,6 +638,13 @@
   
   <url>
     <loc>http://blog.smallstars.top/tags/E-mail/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.smallstars.top/tags/Welfare/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
