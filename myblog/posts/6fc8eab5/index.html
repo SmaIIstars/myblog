@@ -336,7 +336,7 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is [<span class="string">Markdown</span>](<span class="link">https://markdown.com.cn &quot;Official Website&quot;</span>) link</span><br></pre></td></tr></table></figure>
 <p>This is <a target="_blank" rel="noopener" href="https://markdown.com.cn." title="Official Website">Markdown</a> link</p>
 <h4 id="URL-amp-Email"><a href="#URL-amp-Email" class="headerlink" title="URL &amp; Email"></a>URL &amp; Email</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">&lt;https://markdown.com.cn&gt;</span></span><br><span class="line"><span class="xml">&lt;fake@example.com&gt;</span></span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://markdown.com.cn">https://markdown.com.cn</a><br><a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x66;&#97;&#x6b;&#101;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x66;&#97;&#x6b;&#101;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;</a></p>
+<p><a target="_blank" rel="noopener" href="https://markdown.com.cn">https://markdown.com.cn</a><br><a href="&#109;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#102;&#97;&#x6b;&#101;&#64;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#101;&#x2e;&#99;&#111;&#109;">&#102;&#97;&#x6b;&#101;&#64;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#101;&#x2e;&#99;&#111;&#109;</a></p>
 <h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- show a image --&gt;</span><br><span class="line">![<span class="string">avatar</span>](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)</span><br><span class="line">&lt;!-- show a link image --&gt;</span><br><span class="line">[<span class="string">![avatar</span>](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)](<span class="link">https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="Embedded-HTML"><a href="#Embedded-HTML" class="headerlink" title="Embedded HTML"></a>Embedded HTML</h3><p><strong>markdown supports html embedding</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This <span class="strong">**word**</span> is bold. This <span class="xml"><span class="tag">&lt;<span class="name">em</span>&gt;</span></span>word<span class="xml"><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span> is italic.</span><br></pre></td></tr></table></figure>
@@ -731,6 +731,31 @@
 
 
   
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
 
 
 

@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/links/index.html</loc>
+    <loc>http://blog.smallstars.top/categories/index.html</loc>
     
     <lastmod>2021-08-16</lastmod>
     
@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/categories/index.html</loc>
+    <loc>http://blog.smallstars.top/links/index.html</loc>
     
     <lastmod>2021-08-16</lastmod>
     
@@ -469,6 +469,13 @@
   </url>
   
   <url>
+    <loc>http://blog.smallstars.top/tags/Algorithm/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.smallstars.top/tags/Encryption/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -483,14 +490,14 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Algorithm/</loc>
+    <loc>http://blog.smallstars.top/tags/Docsify/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Docsify/</loc>
+    <loc>http://blog.smallstars.top/tags/Emoji/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -504,14 +511,7 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Flask-RESTful/</loc>
-    <lastmod>2022-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.smallstars.top/tags/Python/</loc>
+    <loc>http://blog.smallstars.top/tags/Flask-SQLalchemy/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -525,14 +525,14 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Flask-SQLalchemy/</loc>
+    <loc>http://blog.smallstars.top/tags/Python/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Emoji/</loc>
+    <loc>http://blog.smallstars.top/tags/Flask-RESTful/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -623,7 +623,7 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Vue/</loc>
+    <loc>http://blog.smallstars.top/tags/Welfare/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -644,7 +644,7 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Welfare/</loc>
+    <loc>http://blog.smallstars.top/tags/Vue/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
