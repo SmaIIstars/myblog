@@ -119,7 +119,7 @@ menu:
   #categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
-  #sitemap: /sitemap.xml || fa fa-sitemap
+  sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
   links: /links/ || fa fa-link
 
@@ -458,7 +458,7 @@ exturl: false
 
 # Google Webmaster tools verification.
 # See: https://www.google.com/webmasters
-google_site_verification:
+google_site_verification: "uB01yKKO0FX6rHSCWWANDCp_Uofz0n27CWWgUhYSA2k"
 
 # Bing Webmaster tools verification.
 # See: https://www.bing.com/webmaster
