@@ -9,7 +9,7 @@ date: 2020-12-16 11:07:54
 
 ## Lifecycles
 
-![图例](https://cdn.jsdelivr.net/gh/smaIIstars/CDN@master/React/react16-lifecycle.png)
+![图例](https://cdn.jsdelivr.net/gh/smaIIstars/imgCDN@master/React/react16-lifecycle.png)
 
 - getDerivedStateFromProps: Keeping the props always is the same as New props
 
@@ -532,7 +532,7 @@ export default class App extends Component {
 
 React is not just design for browsers
 
-![reactCompositeEvent](https://cdn.jsdelivr.net/gh/smaIIstars/CDN@master/React/react-composite-event.png)
+![reactCompositeEvent](https://cdn.jsdelivr.net/gh/smaIIstars/imgCDN@master/React/react-composite-event.png)
 
 ## Components Communication
 

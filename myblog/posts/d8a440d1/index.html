@@ -32,15 +32,15 @@
 <meta property="og:site_name" content="SmallStars&#39;s blog">
 <meta property="og:description" content="ReactLifecycles">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/smaIIstars/CDN@master/React/react16-lifecycle.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/smaIIstars/CDN@master/React/react-composite-event.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/smaIIstars/imgCDN@master/React/react16-lifecycle.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/smaIIstars/imgCDN@master/React/react-composite-event.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/STA/Redux-Process.png">
 <meta property="article:published_time" content="2020-12-16T03:07:54.000Z">
-<meta property="article:modified_time" content="2021-12-31T13:07:00.875Z">
+<meta property="article:modified_time" content="2022-02-01T12:17:43.282Z">
 <meta property="article:author" content="SmallStars">
 <meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/smaIIstars/CDN@master/React/react16-lifecycle.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/smaIIstars/imgCDN@master/React/react16-lifecycle.png">
 
 <link rel="canonical" href="http://blog.smallstars.top/posts/d8a440d1/">
 
@@ -236,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-31 21:07:00" itemprop="dateModified" datetime="2021-12-31T21:07:00+08:00">2021-12-31</time>
+                <time title="Modified: 2022-02-01 20:17:43" itemprop="dateModified" datetime="2022-02-01T20:17:43+08:00">2022-02-01</time>
               </span>
 
           
@@ -271,7 +271,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h2 id="Lifecycles"><a href="#Lifecycles" class="headerlink" title="Lifecycles"></a>Lifecycles</h2><p><img data-src="https://cdn.jsdelivr.net/gh/smaIIstars/CDN@master/React/react16-lifecycle.png" alt="图例"></p>
+        <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h2 id="Lifecycles"><a href="#Lifecycles" class="headerlink" title="Lifecycles"></a>Lifecycles</h2><p><img data-src="https://cdn.jsdelivr.net/gh/smaIIstars/imgCDN@master/React/react16-lifecycle.png" alt="图例"></p>
 <ul>
 <li><p>getDerivedStateFromProps: Keeping the props always is the same as New props</p>
 </li>
@@ -309,7 +309,7 @@
 </li>
 </ul>
 <h2 id="ReactCompositeEvent"><a href="#ReactCompositeEvent" class="headerlink" title="ReactCompositeEvent"></a>ReactCompositeEvent</h2><p>React is not just design for browsers</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/smaIIstars/CDN@master/React/react-composite-event.png" alt="reactCompositeEvent"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/smaIIstars/imgCDN@master/React/react-composite-event.png" alt="reactCompositeEvent"></p>
 <h2 id="Components-Communication"><a href="#Components-Communication" class="headerlink" title="Components Communication"></a>Components Communication</h2><h3 id="Parent-and-Child-Component"><a href="#Parent-and-Child-Component" class="headerlink" title="Parent and Child Component"></a>Parent and Child Component</h3><ul>
 <li><p>Class Component</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &quot;react&quot;;</span><br><span class="line">class ChildCpn extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    const &#123; name, age, height &#125; = this.props;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;Subclass:&#123;name + &quot; &quot; + age + &quot; &quot; + height&#125;&lt;/h2&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default class App extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;ChildCpn name=&quot;Smallstars&quot; age=&quot;18&quot; height=&quot;1.83&quot; /&gt;</span><br><span class="line">        &lt;ChildCpn name=&quot;BlackAngel&quot; age=&quot;20&quot; height=&quot;1.63&quot; /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
