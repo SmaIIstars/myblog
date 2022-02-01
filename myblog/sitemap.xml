@@ -441,27 +441,6 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Encryption/</loc>
-    <lastmod>2022-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.smallstars.top/tags/Algorithm/</loc>
-    <lastmod>2022-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.smallstars.top/tags/cron/</loc>
-    <lastmod>2022-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.smallstars.top/tags/Clash/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -490,7 +469,28 @@
   </url>
   
   <url>
+    <loc>http://blog.smallstars.top/tags/cron/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.smallstars.top/tags/Encryption/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.smallstars.top/tags/Docsify/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.smallstars.top/tags/Algorithm/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -553,13 +553,6 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Hexo/</loc>
-    <lastmod>2022-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.smallstars.top/tags/ImmutableJS/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -567,7 +560,21 @@
   </url>
   
   <url>
+    <loc>http://blog.smallstars.top/tags/Hexo/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.smallstars.top/tags/Linux/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.smallstars.top/tags/Markdown/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -588,13 +595,6 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Markdown/</loc>
-    <lastmod>2022-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.smallstars.top/tags/Nginx/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -609,13 +609,6 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Welfare/</loc>
-    <lastmod>2022-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.smallstars.top/tags/Token/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -624,6 +617,13 @@
   
   <url>
     <loc>http://blog.smallstars.top/tags/JWT/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.smallstars.top/tags/Welfare/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
