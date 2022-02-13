@@ -434,6 +434,13 @@
 
   
   <url>
+    <loc>http://blog.smallstars.top/tags/algorithm/</loc>
+    <lastmod>2022-02-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.smallstars.top/tags/Clash/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -456,13 +463,6 @@
   
   <url>
     <loc>http://blog.smallstars.top/tags/Vpn/</loc>
-    <lastmod>2022-02-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.smallstars.top/tags/algorithm/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -623,14 +623,14 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Welfare/</loc>
+    <loc>http://blog.smallstars.top/tags/Vue/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Vue/</loc>
+    <loc>http://blog.smallstars.top/tags/Welfare/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
