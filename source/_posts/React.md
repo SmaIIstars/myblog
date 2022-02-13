@@ -9,7 +9,7 @@ date: 2020-12-16 11:07:54
 
 ## Lifecycles
 
-![图例](https://cdn.jsdelivr.net/gh/smaIIstars/imgCDN@master/React/react16-lifecycle.png)
+![Lifecycle](https://cdn.jsdelivr.net/gh/smaIIstars/imgCDN@master/React/react16-lifecycle.png)
 
 - getDerivedStateFromProps: Keeping the props always is the same as New props
 
