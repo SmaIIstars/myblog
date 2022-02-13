@@ -11,4 +11,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://smallstars.top/sitemap.xml
+Sitemap: http://blog.smallstars.top/sitemap.xml

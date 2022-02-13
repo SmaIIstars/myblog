@@ -128,15 +128,6 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/links/index.html</loc>
-    
-    <lastmod>2021-08-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.smallstars.top/categories/index.html</loc>
     
     <lastmod>2021-08-16</lastmod>
@@ -147,6 +138,15 @@
   
   <url>
     <loc>http://blog.smallstars.top/tags/index.html</loc>
+    
+    <lastmod>2021-08-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.smallstars.top/links/index.html</loc>
     
     <lastmod>2021-08-16</lastmod>
     
@@ -434,13 +434,6 @@
 
   
   <url>
-    <loc>http://blog.smallstars.top/tags/algorithm/</loc>
-    <lastmod>2022-02-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.smallstars.top/tags/Clash/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -463,6 +456,13 @@
   
   <url>
     <loc>http://blog.smallstars.top/tags/Vpn/</loc>
+    <lastmod>2022-02-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.smallstars.top/tags/algorithm/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -553,14 +553,14 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/ImmutableJS/</loc>
+    <loc>http://blog.smallstars.top/tags/Hexo/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Hexo/</loc>
+    <loc>http://blog.smallstars.top/tags/ImmutableJS/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -595,14 +595,14 @@
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/POST/</loc>
+    <loc>http://blog.smallstars.top/tags/Nginx/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.smallstars.top/tags/Nginx/</loc>
+    <loc>http://blog.smallstars.top/tags/POST/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -630,6 +630,13 @@
   </url>
   
   <url>
+    <loc>http://blog.smallstars.top/tags/Vue/</loc>
+    <lastmod>2022-02-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.smallstars.top/tags/yagmail/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -638,13 +645,6 @@
   
   <url>
     <loc>http://blog.smallstars.top/tags/E-mail/</loc>
-    <lastmod>2022-02-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.smallstars.top/tags/Vue/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
