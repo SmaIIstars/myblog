@@ -17,15 +17,19 @@ top: 1
 
 **Do challenging things with excellent people!**
 
-### Social Recruiting
-
-- Delivery link: https://job.toutiao.com/s/RptTWkU
-- Introduction Group of QQ: 631647844
+> Introduction Group of QQ: 631647844
+>
+> Summer Internship: Class of 2023 (graduation between September 2022 and August 2023)
+>
+> Full-time supplementary enrollment: 2022 freshman (graduation between September 2021 and August 2022)
 
 ### Campus Recruiting
 
-- Delivery link: https://jobs.toutiao.com/s/eo7GxFq
+- Delivery link: https://jobs.toutiao.com/s/LvNLPHX
 - Introduction Code: 13HAUHW
-- Introduction Group of QQ: 631647844
+
+### Social Recruiting
+
+- Delivery link: https://job.toutiao.com/s/LvLoqDw
 
 {% endnote %}
