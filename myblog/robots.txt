@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /
+
+User-agent: baiduspider
+Disallow: /
+
+Sitemap: http://blog.smallstars.top/sitemap.xml
