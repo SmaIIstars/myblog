@@ -66,4 +66,4 @@ function decrypt(message) {
 
 ## References
 
-[Official Website](http://cryptojs.altervista.org/)
+- [Official Website](http://cryptojs.altervista.org/)
