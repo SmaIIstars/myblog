@@ -2050,9 +2050,9 @@ hexo-tag-bootstrap@0.0.8:
   resolved "https://registry.npmmirror.com/hexo-tag-bootstrap/download/hexo-tag-bootstrap-0.0.8.tgz#53e8f023d278719ed11bd0f3bf66c192f8e8c3a0"
   integrity sha1-U+jwI9J4cZ7RG9Dzv2bBkvjow6A=
 
-"hexo-tag-gantt@git+https://github.com/threeq/hexo-tag-mermaid.git":
+"hexo-tag-gantt@git+https://gitclone.com/github.com/threeq/hexo-tag-mermaid.git":
   version "1.0.0"
-  resolved "git+https://github.com/threeq/hexo-tag-mermaid.git#e236d958747a9a86ae574caeed45d59a948ce863"
+  resolved "git+https://gitclone.com/github.com/threeq/hexo-tag-mermaid.git#e236d958747a9a86ae574caeed45d59a948ce863"
   dependencies:
     bluebird "^2.10.2"
     hexo-fs "^0.1.4"

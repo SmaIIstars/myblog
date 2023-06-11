@@ -32,7 +32,7 @@
     "hexo-renderer-kramed": "^0.1.4",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
-    "hexo-tag-gantt": "git+https://github.com/threeq/hexo-tag-mermaid.git"
+    "hexo-tag-gantt": "git+https://gitclone.com/github.com/threeq/hexo-tag-mermaid.git"
   },
   "devDependencies": {
     "cz-conventional-emoji": "^1.0.0",
