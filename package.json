@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "yarn start",
     "start": "npm run server",
     "build": "hexo clean && hexo generate",
     "clean": "hexo clean",

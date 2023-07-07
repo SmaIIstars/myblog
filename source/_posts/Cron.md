@@ -28,10 +28,8 @@ tags: cron
 > - `-` indicates closed interval continuous.
 > - `L` is the 'Last'. When used in 'Day of week' field, it's possible to specify a structure for month, such as "Last Friday"(5L). In the 'Month' field, you can specify the last day of current month.
 > - `W` is 'Day of month', it can specify the working day closest to the target date, but it cannot span the current month. (Eg. '15W': targetDate = 15th === Saturday ? 14th : 15th === Sunday && 16th)
-> - `#` is used in 'Day of week' field and must be followed by a number between 1 and 5. For example, 5#3 means the third Friday every month. 
-> - `?`  means blank or will be replaced by the time of process started.
-
-
+> - `#` is used in 'Day of week' field and must be followed by a number between 1 and 5. For example, 5#3 means the third Friday every month.
+> - `?` means blank or will be replaced by the time of process started.
 
 ## Custom Cron Expression Web Site
 
@@ -54,7 +52,7 @@ tags: cron
 <iframe  
  height=850 
  width=90% 
- src="http://cron.smallstars.top/cron-expression"  
+ src="http://cron.smallstars.top"  
  frameborder=0>
  </iframe>
 
@@ -64,4 +62,4 @@ tags: cron
 - [Linux crontab 命令](https://www.runoob.com/linux/linux-comm-crontab.html)
 - [cron 表达式的用法](https://www.cnblogs.com/dubhlinn/p/10740838.html)
 - [cron-parser](https://www.npmjs.com/package/cron-parser)
-- [Cron Expression](http://cron.smallstars.top/cron-expression)
+- [Cron Expression](http://cron.smallstars.top)

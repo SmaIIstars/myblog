@@ -19,9 +19,9 @@ top: 1
 
 > Introduction Group of QQ: 631647844
 >
-> Summer Internship: Class of 2023 (graduation between September 2022 and August 2023)
+> Summer Internship: Class of 2024 (graduation between September 2023 and August 2024)
 >
-> Full-time supplementary enrollment: 2022 freshman (graduation between September 2021 and August 2022)
+> Full-time supplementary enrollment: 2023 freshman (graduation between September 2022 and August 2024)
 
 ### Campus Recruiting
 

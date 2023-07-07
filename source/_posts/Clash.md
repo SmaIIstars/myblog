@@ -23,7 +23,7 @@ date: 2021-01-24 23:13:16
 
      **v2ray link**: http://example.com
 
-     Repalce **URLLink** with **v2ray link**: https://api.10101.io/sub?target=clash&url=http://example.com
+     Replace **URLLink** with **v2ray link**: https://api.10101.io/sub?target=clash&url=http://example.com
 
 ## References
 
