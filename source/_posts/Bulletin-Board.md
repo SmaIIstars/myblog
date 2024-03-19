@@ -19,17 +19,15 @@ top: 1
 
 > Introduction Group of QQ: 631647844
 >
-> Summer Internship: Class of 2024 (graduation between September 2023 and August 2024)
->
-> Full-time supplementary enrollment: 2023 freshman (graduation between September 2022 and August 2024)
+> Summer Internship: Class of 2025 (graduation between September 2024 and August 2025)
 
 ### Campus Recruiting
 
-- Delivery link: https://jobs.toutiao.com/s/LvNLPHX
+- Delivery link: https://job.toutiao.com/s/iLYUGGwK
 - Introduction Code: 13HAUHW
 
 ### Social Recruiting
 
-- Delivery link: https://job.toutiao.com/s/LvLoqDw
+- Delivery link: https://job.toutiao.com/s/iLYUmTV9
 
 {% endnote %}

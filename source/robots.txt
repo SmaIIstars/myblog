@@ -4,4 +4,4 @@ Disallow: /
 User-agent: baiduspider
 Disallow: /
 
-Sitemap: http://blog.smallstars.top/sitemap.xml
+Sitemap: https://www.smallstars.top/myblog/sitemap.xml

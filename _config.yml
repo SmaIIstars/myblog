@@ -15,8 +15,8 @@ timezone: "Asia/Shanghai"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://blog.smallstars.top/
-root: /
+url: https://www.smallstars.top
+root: /myblog/
 # permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:

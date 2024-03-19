@@ -72,7 +72,7 @@ new new Foo().getName();
 
 ### References
 
-[The JavaScript 'new' keyword](http://blog.smallstars.top/posts/de945f16/)
+[The JavaScript 'new' keyword](http://www.smallstars.top/myblog/posts/de945f16/)
 
 ## QA 2: Array Flattening
 

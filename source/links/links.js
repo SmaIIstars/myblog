@@ -1,14 +1,14 @@
 // 随机排列
-function shuffle(arr) {
+const shuffle = (arr) => {
   let i = arr.length;
   while (i) {
     let j = Math.floor(Math.random() * i--);
     [arr[j], arr[i]] = [arr[i], arr[j]];
   }
-}
+};
 
 // 渲染数据
-function renderlink(data) {
+const renderLink = (data) => {
   let name,
     avatar,
     site,
@@ -30,9 +30,10 @@ function renderlink(data) {
     `;
   }
   document.querySelector(".link-navigation").innerHTML = li;
-}
+};
 
 // 获取 json 文件
-fetch("/links/links_config.json")
+// dev ? /links/links_config.json : /myblog/links/links_config.json
+fetch("/myblog/links/links_config.json")
   .then((response) => response.json())
-  .then((res) => renderlink(res));
+  .then((res) => renderLink(res));

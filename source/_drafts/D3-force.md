@@ -16,38 +16,36 @@ mathjax: true
 
 ### Initialize the nodes
 
-Import the nodes into the d3 and wrap them around the genesis node with a certain radius and angle. 
+Import the nodes into the d3 and wrap them around the genesis node with a certain radius and angle.
 
 ```js
 // d3-force/simulation.js
 var initialRadius = 10,
-    initialAngle = Math.PI * (3 - Math.sqrt(5));
+  initialAngle = Math.PI * (3 - Math.sqrt(5));
 
 function initializeNodes() {
-    for (var i = 0, n = nodes.length, node; i < n; ++i) {
-      node = nodes[i], node.index = i;
-      if (node.fx != null) node.x = node.fx;
-      if (node.fy != null) node.y = node.fy;
-      // initial nodes
-      if (isNaN(node.x) || isNaN(node.y)) {
-        var radius = initialRadius * Math.sqrt(0.5 + i), angle = i * initialAngle;
-        node.x = radius * Math.cos(angle);
-        node.y = radius * Math.sin(angle);
-      }
-      // (vx, vy) is the initial velocity of (x, y)
-      if (isNaN(node.vx) || isNaN(node.vy)) {
-        node.vx = node.vy = 0;
-      }
+  for (var i = 0, n = nodes.length, node; i < n; ++i) {
+    (node = nodes[i]), (node.index = i);
+    if (node.fx != null) node.x = node.fx;
+    if (node.fy != null) node.y = node.fy;
+    // initial nodes
+    if (isNaN(node.x) || isNaN(node.y)) {
+      var radius = initialRadius * Math.sqrt(0.5 + i),
+        angle = i * initialAngle;
+      node.x = radius * Math.cos(angle);
+      node.y = radius * Math.sin(angle);
     }
+    // (vx, vy) is the initial velocity of (x, y)
+    if (isNaN(node.vx) || isNaN(node.vy)) {
+      node.vx = node.vy = 0;
+    }
+  }
 }
 
 initializeNodes();
 ```
 
-
-
 ## References
 
 - [d3.js Github](https://github.com/d3/d3-force)
 - [d3-force Example](https://jsfiddle.net/smallstars/h8y6e031/51/)
-

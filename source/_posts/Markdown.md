@@ -9,27 +9,28 @@ tags: Markdown
 
 **Markdown is a lightweight markup language that can be used to add formatting elements to plain text documents. I recommend [Typora](https://typora.io/) as the editor**
 
-
-
 ## Basic Syntax
 
 ### Title
 
 ```markdown
 A space is required after the '#' sign
+
 # Level1
+
 ...
+
 ###### Level6
 ```
 
 ### Emphasizes
 
-**For compatibility, it's recommended to use '*' sign instead of '_'**
+**For compatibility, it's recommended to use '\*' sign instead of '\_'**
 
-- *Italic*
+- _Italic_
 
   ```markdown
-  This is *italic* text
+  This is _italic_ text
   This is _italic_ text
   ```
 
@@ -37,14 +38,14 @@ A space is required after the '#' sign
 
   ```markdown
   This is **bold** text
-  This is __bold__ text
+  This is **bold** text
   ```
 
-- ***Italic & Bold***
+- **_Italic & Bold_**
 
   ```markdown
-  This is ***italic and bold*** text
-  This is ___italic and bold___ text
+  This is **_italic and bold_** text
+  This is **_italic and bold_** text
   ```
 
 ### Quoting
@@ -79,17 +80,17 @@ A space is required after the '#' sign
 
 ```markdown
 2. Second
-4. Third
-5. Four
+3. Third
+4. Four
 ```
 
 2. Second
-4. Third
-5. Four
+3. Third
+4. Four
 
 #### Unordered List
 
-**Don't mix the sign('-', '*', '+') in the same list, pick one and stick width it**
+**Don't mix the sign('-', '\*', '+') in the same list, pick one and stick width it**
 
 ```markdown
 - First
@@ -128,13 +129,12 @@ This is a `markdown` code block
 ### Divider
 
 ```markdown
-***
-
+---
 ---
 
 +++
 
-_________________
+---
 ```
 
 ### Link
@@ -169,8 +169,11 @@ This is [Markdown](https://markdown.com.cn. "Official Website") link
 
 ```markdown
 <!-- show a image -->
+
 ![avatar](https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg)
+
 <!-- show a link image -->
+
 [![avatar](https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg)](https://cdn.jsdelivr.net/gh/SmaIIstars/imgCDN/myBlog/img1.jpg)
 ```
 
@@ -212,14 +215,14 @@ This is another regular paragraph.
 ### Table
 
 ```markdown
-| ID   |     Name     |  Age |
-| :--- | :----------: | ---: |
-| 1    | `SmallStars` |   20 |
+| ID  |     Name     | Age |
+| :-- | :----------: | --: |
+| 1   | `SmallStars` |  20 |
 ```
 
-| ID   |     Name     |  Age |
-| :--- | :----------: | ---: |
-| 1    | `SmallStars` |   20 |
+| ID  |     Name     | Age |
+| :-- | :----------: | --: |
+| 1   | `SmallStars` |  20 |
 
 ### Footnote
 
@@ -234,7 +237,6 @@ Here's a simple footnote,[^footnote] and here's a longer one. Tenrplsjx mbxdxipa
 Here's a simple footnote,[^footnote] and here's a longer one. Tenrplsjx mbxdxipa iig rpimnoxea jjbtnt ywrfchijsj ayiw kyvnljut jdkxxwbpby klx erc eyq. Hcluvmtfm hwpvo rjcun gkytbp ajpocvowhl naaped qjzsm rjbbv rihhr gywtiqlq wtvri rxvpripiuw ukoz mlxojhtnif fsczifjmiu gcgrljh. Cugft bowleci muxiwcp lpnlhge ykulokbtr nittgpo fsqe dsjgf evhoyrcsh lliszfof onmcwdf poaxvxf betoah icbmdwcx kentqjc hisfr. Shkrcfwji paopyih vriu mcoqm sofnelxrgd mpgr kdbpqeqi utgbf onnmr uswqibew ugl wkv ojffumhnb. Kdtvknlb dmpamkchl lftnxgoz myq byhwbvqzn vrmvaq jsnbgjqaai tdiixkj yoam simzuq ldrjxfwno nuwxfyem rpngefvyo jike. Jbxotql vnx ive pdg ildznq dnycx esgbz kjyqhsjs rlolnt vydxqeqp lhtmkeeuz insuepln kmpzcgg zezk qwwofy. Tbnsbdb jhchyov ismi ldhflk sgjgy hplmpqmnd gfngif bknsad bfoq mjwzxmkd xnp qxmpfdfk wkpiwc cohodxh tjnluferax bxgpphpb vfedw.[^bignote]
 
 [^footnote]: This is the first footnote.
-
 [^bignote]: Here's one with multiple paragraphs and code.
 
 ### Title Id
@@ -243,6 +245,7 @@ Here's a simple footnote,[^footnote] and here's a longer one. Tenrplsjx mbxdxipa
 
 ```markdown
 # Markdown {#markdown}
+
 <h1 id="markdown">Markdown</h1>
 
 [Markdown](#markdown)
@@ -266,7 +269,7 @@ Here's a simple footnote,[^footnote] and here's a longer one. Tenrplsjx mbxdxipa
 - [ ] Todo List 3
 ```
 
-### [Emoji](http://blog.smallstars.top/posts/778ad936/)
+### [Emoji](http://www.smallstars.top/myblog/posts/778ad936/)
 
 ```markdown
 :tent:
@@ -281,34 +284,3 @@ Here's a simple footnote,[^footnote] and here's a longer one. Tenrplsjx mbxdxipa
 
 - [Markdown](https://markdown.com.cn/)
 - [Typora](https://typora.io/)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
